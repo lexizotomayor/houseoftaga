@@ -1,0 +1,145 @@
+---
+layout: base.njk
+ogType: article
+---
+{%- from "partials/blocks.njk" import blocks -%}
+{%- from "partials/share.njk" import share -%}
+{%- from "partials/ago.njk" import ago -%}
+{%- set s = story %}
+{%- set hasShort = s.shortBody %}
+{%- set tabs = [{ label: "home", url: "/" }] %}
+{%- for p in periods %}{% set tabs = (tabs.push({ label: p.key, num: p.num, url: "/" + p.key + "/", current: p.period == s.period }), tabs) %}{% endfor %}
+<div class="progress" aria-hidden="true"><span data-progress></span></div>
+{% include "partials/head-small.njk" %}
+<main id="content" data-story{% if hasShort %} data-mode="short"{% endif %}>
+<section class="split s-title">
+  <div class="side">
+    <a class="cat" href="/{{ s.periodKey }}/">{{ s.period }}</a>
+    <div class="s-date"><time datetime="{{ s.date | isoDate }}">{{ s.date | longDate }}</time>{{ ago(s.date) }}</div>
+  </div>
+  <div class="main">
+    <h1>{{ s.title }}</h1>
+    {%- if s.dek %}<p class="dek">{{ s.dek }}</p>{% endif %}
+    <div class="meta">
+      <span>by <strong>{{ s.author }}</strong></span>
+      {%- if hasShort %}
+      <span class="ago" data-version="short">{{ s.shortMin }} min read</span>
+      <span class="ago" data-version="full" hidden>{{ s.readMin }} min read</span>
+      {%- else %}
+      <span class="ago">{{ s.readMin }} min read</span>
+      {%- endif %}
+      {{ share(s.title, s.url) }}
+    </div>
+  </div>
+</section>
+
+{%- if s.lead %}
+<figure class="s-hero"><img src="{{ s.lead.src }}" alt="{{ s.imageAlt }}" width="{{ s.lead.width }}" height="{{ s.lead.height }}" fetchpriority="high"></figure>
+{%- endif %}
+
+<section class="split">
+  <aside class="side rail{% if not hasShort and not s.timeline %} is-empty{% endif %}">
+    <div class="stick">
+      {%- if hasShort %}
+      <div class="toggle-wrap">
+        <span class="kicker" id="len-label">read it</span>
+        <div class="toggle" role="group" aria-labelledby="len-label">
+          <button type="button" data-set-mode="short" aria-pressed="true"><b>short</b><span>{{ s.shortMin }} min</span></button>
+          <button type="button" data-set-mode="full" aria-pressed="false"><b>full</b><span>{{ s.readMin }} min</span></button>
+        </div>
+      </div>
+      {%- endif %}
+      {%- if s.timeline %}
+      <div class="timeline">
+        <span class="kicker">{{ s.timelineTitle or "timeline" }}</span>
+        {%- for t in s.timeline %}
+        <div><b>{{ t.date }}</b><span>{{ t.what }}</span></div>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </aside>
+  <article class="s-article">
+    {%- if hasShort %}
+    <div class="prose measure" data-version="short">
+      {{ blocks(s.shortBody) }}
+      <button class="btn to-full" type="button" data-set-mode="full">read the full story · {{ s.readMin }} min</button>
+    </div>
+    <div class="prose measure" data-version="full" hidden>
+      {{ blocks(s.body) }}
+    </div>
+    {%- else %}
+    <div class="prose measure">
+      {{ blocks(s.body) }}
+    </div>
+    {%- endif %}
+    {%- if s.tags.length %}
+    <div class="tags measure" aria-label="Tags">
+      {%- for tag in s.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+    {%- endif %}
+  </article>
+</section>
+
+{%- if s.archive.length %}
+<section class="archive" aria-labelledby="archive-title"{% if hasShort %} data-version="full" hidden{% endif %}>
+  <div class="sec-head"><h2 id="archive-title">from the archive</h2><span class="bar" aria-hidden="true"></span><span class="count">{{ s.archive.length }} photograph{% if s.archive.length != 1 %}s{% endif %}</span></div>
+  <div class="masonry">
+    {%- for g in s.archive %}
+    <figure>
+      <img src="{{ g.img.src }}" alt="{{ g.alt }}" width="{{ g.img.width }}" height="{{ g.img.height }}" loading="lazy" decoding="async">
+      <figcaption><b>{{ loop.index | pad2 }}</b><span>{{ g.caption or g.alt or "Archive photograph" }}</span></figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- set cms = (comments[s.slug] or []) | sort(true, false, "date") %}
+<section class="split comments" id="comments" aria-labelledby="comments-title">
+  <div class="side">
+    <div class="tally"><h2 id="comments-title">comments</h2><span>{{ cms.length | pad2 }}</span></div>
+  </div>
+  <div class="main">
+    <div class="measure">
+      {% include "partials/comment-form.njk" %}
+      {%- if cms.length %}
+      <ol class="c-list">
+        {%- for c in cms %}
+        <li>
+          <span class="initial" aria-hidden="true">{{ c.name | first }}</span>
+          <div class="c-body">
+            <div class="c-who"><strong>{{ c.name }}</strong>{{ ago(c.date) }}</div>
+            <p>{{ c.text }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+<nav class="pn" aria-label="More stories">
+  <a class="older" href="{{ s.older.url }}"><span class="dir"><i aria-hidden="true">←</i>older</span><span class="t">{{ s.older.title }}</span></a>
+  <a class="newer" href="{{ s.newer.url }}"><span class="dir">newer<i aria-hidden="true">→</i></span><span class="t">{{ s.newer.title }}</span></a>
+</nav>
+
+{%- if s.related.length %}
+<section class="related" aria-labelledby="related-title">
+  <div class="sec-head"><h2 id="related-title">more {{ s.period }}</h2><span class="bar" aria-hidden="true"></span></div>
+  <div class="rel-list">
+    {%- for r in s.related %}
+    <a href="{{ r.url }}">
+      {% if r.lead %}<img class="thumb" src="{{ r.lead.src }}" alt="" width="{{ r.lead.width }}" height="{{ r.lead.height }}" loading="lazy" decoding="async">{% else %}<span class="thumb"></span>{% endif %}
+      <span class="r">
+        <span class="cat">{{ r.period }}</span>
+        <span class="rt"><span>{{ r.title }}</span><span class="when"><time datetime="{{ r.date | isoDate }}">{{ r.date | longDate }}</time>{{ ago(r.date) }}</span></span>
+      </span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+</main>
+{% include "partials/foot-simple.njk" %}

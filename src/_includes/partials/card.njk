@@ -1,0 +1,17 @@
+{%- from "partials/share.njk" import share -%}
+{%- from "partials/ago.njk" import ago -%}
+{#- One story in the grid. `cell` comes from the gridPlan filter; `n` is its number. -#}
+{% macro card(cell, n) %}
+{%- set s = cell.story %}
+<article class="card{% if cell.t >= 4 %} big-t{% endif %}{% if cell.d >= 4 %} big-d{% endif %}" style="--d:{{ cell.d }};--t:{{ cell.t }};--a:{{ cell.aspect }};--am:{{ cell.mAspect }}">
+  <a class="pic" href="{{ s.url }}" aria-hidden="true" tabindex="-1">{% if s.lead %}<img src="{{ s.lead.src }}" alt="" width="{{ s.lead.width }}" height="{{ s.lead.height }}" loading="lazy" decoding="async">{% endif %}</a>
+  <div class="body">
+    <a class="cat" href="/{{ s.periodKey }}/">{{ s.period }}</a>
+    <div class="col">
+      <span class="n">{{ n | pad2 }}</span>
+      <a class="title" href="{{ s.url }}">{{ s.title }}</a>
+      <div class="meta"><span>by {{ s.author }}</span>{{ ago(s.date) }}{{ share(s.title, s.url) }}</div>
+    </div>
+  </div>
+</article>
+{% endmacro %}

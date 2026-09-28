@@ -1,0 +1,12 @@
+<footer class="foot-simple">
+  <div class="row">
+    {%- if footBack == "home" %}
+    <a class="label-link" href="/"><span class="arrow" aria-hidden="true">←</span>all stories</a>
+    {%- else %}
+    <a class="label-link" href="#top"><span class="tick" aria-hidden="true"></span>back to top</a>
+    <nav aria-label="Site"><a href="/about/">about</a><a href="/contact/">contact</a><a href="/privacy/">privacy</a></nav>
+    {%- endif %}
+    <span>{{ site.copyright }}</span>
+  </div>
+  {% set barsClass = "bars--end" %}{% include "partials/bars.njk" %}
+</footer>

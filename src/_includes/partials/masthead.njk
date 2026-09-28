@@ -1,0 +1,46 @@
+{%- from "partials/wordmark.njk" import wordmark -%}
+{#- Home and period pages. `currentPeriod` (a period key) highlights its nav item. -#}
+{%- macro navLinks() -%}
+{%- for p in periods %}
+<a href="/{{ p.key }}/"{% if currentPeriod == p.key %} aria-current="page"{% endif %}><span class="num">{{ p.num }}</span><span>{{ p.label }}</span></a>
+{%- endfor %}
+{%- endmacro -%}
+<header class="mast">
+  <div class="mast-compact">
+    <span class="vbar" aria-hidden="true"></span>
+    <div class="mari" aria-hidden="true"><b>marianas</b><span>Saipan · Tinian · Rota</span></div>
+    <div class="inner">
+      <div class="mark">
+        {{ wordmark(tag="h1" if isHome else "span", link=not isHome) }}
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <nav class="nav-phone" aria-label="Sections">
+        {{ navLinks() }}
+        <a href="/about/">about</a>
+        <a href="/contact/">contact</a>
+      </nav>
+      <nav class="nav-tablet" aria-label="Sections">
+        {{ navLinks() }}
+        <span class="gap" aria-hidden="true"></span>
+        <a href="/about/">about</a>
+        <a href="/contact/">contact</a>
+      </nav>
+    </div>
+    {% include "partials/bars.njk" %}
+    <div class="homage-row"><div class="homage"><span>an homage to</span><span>chamorro</span><span>culture</span></div></div>
+  </div>
+  <div class="mast-desk">
+    <span class="vbar" aria-hidden="true"></span>
+    <div class="mari" aria-hidden="true"><b>marianas</b><span>Saipan · Tinian · Rota</span></div>
+    <nav class="nav-desk" aria-label="Sections">
+      {{ navLinks() }}
+      <a href="/about/">about</a>
+      <a href="/contact/">contact</a>
+    </nav>
+  </div>
+  <div class="mast-right">
+    {{ wordmark(tag="h1" if isHome else "span", link=not isHome) }}
+    <div class="homage"><span>an homage to</span><span>chamorro</span><span>culture</span></div>
+  </div>
+  <div class="hbars bars" aria-hidden="true"><span></span><span></span></div>
+</header>

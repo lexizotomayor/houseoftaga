@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;-webkit-font-smoothing:antialiased}
+a{color:#5E3023;text-decoration:none}
+a:hover{color:#C8372A}
+*,*::before,*::after{box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+button{font:inherit}
+</style>
+</helmet>
+<div id="top" style="background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;overflow-x:hidden">
+
+<header data-screen-label="Masthead" style="position:relative;display:grid;grid-template-columns:{{ headCols }};border-bottom:4px solid #5E3023">
+<sc-if value="{{ isCompact }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;overflow:hidden;padding-top:{{ padTopC }}">
+<span style="position:absolute;right:{{ mariCol }};top:0;bottom:0;width:21px;background:{{ accent }}"></span>
+<div style="position:absolute;right:0;width:{{ mariCol }};justify-content:center;top:{{ mariM }};writing-mode:vertical-rl;display:flex;align-items:center;gap:13px;font-size:18px;line-height:1;white-space:nowrap"><span style="font-weight:800;letter-spacing:0.12em;text-transform:uppercase">marianas</span><span>Saipan · Tinian · Rota</span></div>
+<div style="position:relative;padding:0 calc({{ mariCol }} + 21px + {{ pad }}) 0 {{ pad }};display:flex;flex-direction:column;gap:34px">
+<div style="display:flex;flex-direction:column;gap:13px">
+<div style="display:flex;align-items:flex-end;gap:13px">
+<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:{{ houseSize }};font-weight:700;letter-spacing:-0.02em;line-height:1;position:relative;bottom:{{ housePad }};white-space:nowrap">house of</span>
+<h1 style="margin:0;font-size:{{ tagaSize }};font-weight:800;letter-spacing:-0.06em;line-height:0.78;white-space:nowrap;padding-bottom:0.24em">taga</h1>
+<img src="./assets/taga-glyph.png" alt="" aria-hidden="true" style="height:{{ glyphH }};width:auto;opacity:0.35;flex:none;align-self:flex-end;margin-bottom:0">
+</div>
+<span style="display:block;height:3px;background:#5E3023"></span>
+</div>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<nav style="display:flex;flex-direction:column;font-size:min(18px,4.2vw);font-weight:800;letter-spacing:0;white-space:nowrap;line-height:1.2;text-transform:uppercase">
+<sc-for list="{{ periods }}" as="p" hint-placeholder-count="4">
+<a href="{{ p.href }}" onClick="{{ p.go }}" aria-current="{{ p.current }}" style="background:{{ p.bg }};color:{{ p.fg }};display:flex;align-items:center;gap:13px;min-height:44px;padding:8px 0;border-bottom:3px solid #5E3023"><span style="color:{{ p.numC }}">{{ p.num }}</span><span>{{ p.name }}</span></a>
+</sc-for>
+<a href="Pages.dc.html#about" style="display:flex;align-items:center;gap:13px;min-height:44px;padding:8px 0;border-bottom:3px solid #5E3023"><span>about</span></a>
+<a href="Pages.dc.html#contact" style="display:flex;align-items:center;gap:13px;min-height:44px;padding:8px 0;border-bottom:3px solid #5E3023"><span>contact</span></a>
+</nav>
+</sc-if>
+<sc-if value="{{ isTablet }}" hint-placeholder-val="{{ false }}">
+<nav style="display:flex;align-items:stretch;height:{{ navH }};overflow-x:auto">
+<sc-for list="{{ periods }}" as="p" hint-placeholder-count="4">
+<a href="{{ p.href }}" onClick="{{ p.go }}" aria-current="{{ p.current }}" style="background:{{ p.bg }};color:{{ p.fg }};writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 8px 0;border-left:3px solid #5E3023;min-width:44px;display:flex;align-items:center;gap:13px"><span style="color:{{ p.numC }}">{{ p.num }}</span><span>{{ p.name }}</span></a>
+</sc-for>
+<span style="display:block;width:21px;flex:none"></span>
+<a href="Pages.dc.html#about" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 8px 0;border-left:3px solid #5E3023;min-width:44px;display:flex;align-items:center;gap:13px">about</a>
+<a href="Pages.dc.html#contact" style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 8px 0;border-left:3px solid #5E3023;min-width:44px;display:flex;align-items:center;gap:13px">contact</a>
+</nav>
+</sc-if>
+</div>
+<div style="position:relative;display:flex;flex-direction:column;gap:8px;margin-top:55px;pointer-events:none"><span style="display:block;height:13px;background:{{ accent }}"></span><span style="display:block;height:13px;background:{{ accent }}"></span></div>
+<div style="position:relative;padding:34px calc({{ mariCol }} + 21px + {{ pad }}) 55px {{ pad }};display:flex;justify-content:space-between;align-items:flex-end;gap:21px">
+<div style="display:flex;flex-direction:column;gap:4px;font-size:{{ homageSize }};font-weight:800;letter-spacing:0.16em;line-height:1.15;text-transform:uppercase"><span>an homage to</span><span>chamorro</span><span>culture</span></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;min-height:{{ mastH }};overflow:hidden">
+<span style="position:absolute;left:38.2%;top:{{ barTop }};bottom:0;width:21px;background:{{ accent }}"></span>
+<div style="position:absolute;left:calc(38.2% + 21px + {{ mariM }});top:{{ mariM }};writing-mode:vertical-rl;display:flex;align-items:center;gap:13px;font-size:18px;line-height:1;white-space:nowrap"><span style="font-weight:800;letter-spacing:0.12em;text-transform:uppercase">marianas</span><span>Saipan · Tinian · Rota</span></div>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<nav style="position:absolute;left:34px;width:calc(38.2% - 68px);top:55px;bottom:calc(38.2% + 55px);display:flex;align-items:stretch;justify-content:space-between;border-right:3px solid #5E3023">
+<sc-for list="{{ periods }}" as="p" hint-placeholder-count="4">
+<a href="{{ p.href }}" onClick="{{ p.go }}" aria-current="{{ p.current }}" style="background:{{ p.bg }};color:{{ p.fg }};flex:1 1 0;min-width:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 0 0;border-left:3px solid #5E3023;display:flex;align-items:center;gap:13px"><span style="color:{{ p.numC }}">{{ p.num }}</span><span>{{ p.name }}</span></a>
+</sc-for>
+<a href="Pages.dc.html#about" style="flex:1 1 0;min-width:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 0 0;border-left:3px solid #5E3023;display:flex;align-items:center;gap:13px">about</a>
+<a href="Pages.dc.html#contact" style="flex:1 1 0;min-width:0;writing-mode:vertical-rl;transform:rotate(180deg);font-size:18px;font-weight:800;letter-spacing:0.06em;line-height:1.2;text-transform:uppercase;white-space:nowrap;padding:13px 0 0;border-left:3px solid #5E3023;display:flex;align-items:center;gap:13px">contact</a>
+</nav>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;justify-content:flex-start;padding:55px {{ pad }} 55px 21px;gap:55px">
+<div style="display:flex;align-items:flex-end;gap:8px">
+<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:{{ houseSize }};font-weight:700;letter-spacing:-0.02em;line-height:1;position:relative;bottom:{{ housePad }};white-space:nowrap">house of</span>
+<h1 style="margin:0;font-size:{{ tagaSize }};font-weight:800;letter-spacing:-0.06em;line-height:0.78;white-space:nowrap;padding-bottom:0.24em">taga</h1>
+<img src="./assets/taga-glyph.png" alt="" aria-hidden="true" style="height:{{ glyphH }};width:auto;opacity:0.35;flex:none;align-self:flex-end;margin-bottom:0">
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;font-size:{{ homageSize }};font-weight:800;letter-spacing:0.16em;line-height:1.15;text-transform:uppercase"><span>an homage to</span><span>chamorro</span><span>culture</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;left:0;right:0;top:61.8%;display:flex;flex-direction:column;gap:8px;pointer-events:none;z-index:1"><span style="display:block;height:13px;background:{{ accent }}"></span><span style="display:block;height:13px;background:{{ accent }}"></span></div>
+</sc-if>
+</header>
+
+<section data-screen-label="Featured" style="position:relative;display:grid;grid-template-columns:{{ mastCols }};border-bottom:4px solid #5E3023;overflow:hidden">
+<div style="position:relative;min-height:{{ heroImgMin }}">
+<div style="position:absolute;inset:0">
+<image-slot id="hero-image" shape="rect" src="{{ hero.image }}" placeholder="featured story image"></image-slot>
+</div>
+</div>
+<div style="border-left:{{ heroRule }};border-top:{{ heroRuleTop }};padding:{{ heroTextPad }};display:flex;flex-direction:column;gap:34px">
+<span style="align-self:flex-start;flex:none;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:{{ accent }};color:#F2EEE6;padding:13px 8px">{{ hero.cat }}</span>
+<div style="display:flex;flex-direction:column;gap:21px">
+<div style="display:flex;align-items:center;gap:21px;flex-wrap:wrap"><h2 style="margin:0;font-size:{{ h2Size }};font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase">featured story</h2><span style="flex:1 1 89px;height:13px;background:{{ accent }}"></span></div>
+<a href="{{ hero.href }}" style="font-size:47px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;text-wrap:balance">{{ hero.title }}</a>
+<p style="margin:0;font-size:18px;line-height:1.618;text-wrap:pretty;hyphens:auto">{{ hero.excerpt }}</p>
+<div style="display:flex;gap:4px 21px;flex-wrap:wrap;align-items:center;font-size:18px;border-top:3px solid #5E3023;padding-top:13px"><span>by {{ hero.author }}</span><span style="color:{{ accent }};font-weight:600">{{ hero.ago }}</span><button onClick="{{ hero.onShare }}" aria-label="Share this story" style="margin-left:auto;background:none;border:none;color:#5E3023;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>{{ hero.shareLabel }}</button></div>
+<a href="{{ hero.href }}" style="display:flex;align-items:center;gap:13px;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;min-height:44px;white-space:nowrap"><span style="display:block;width:21px;height:21px;background:{{ accent }}"></span>read the story</a>
+</div>
+</div>
+</section>
+
+<section data-screen-label="Latest" style="padding:{{ secPad }}">
+<div style="display:flex;align-items:center;gap:21px;margin-bottom:55px;flex-wrap:wrap">
+<h2 style="margin:0;font-size:{{ h2Size }};font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase">{{ listTitle }}</h2>
+<span style="flex:1 1 89px;height:13px;background:{{ accent }}"></span>
+<sc-if value="{{ catOn }}" hint-placeholder-val="{{ false }}"><a href="Home.dc.html" onClick="{{ clearCat }}" style="font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;min-height:44px;display:flex;align-items:center;border-bottom:3px solid {{ accent }}">all stories</a></sc-if><span style="font-size:18px;font-weight:700;letter-spacing:0.12em">{{ listCount }}</span>
+</div>
+<div style="display:grid;grid-template-columns:{{ gridCols }};grid-auto-flow:row dense;gap:3px;background:#5E3023;border:3px solid #5E3023">
+<sc-for list="{{ stories }}" as="post" hint-placeholder-count="10">
+<article style="grid-column:{{ post.span }};background:#F2EEE6;min-width:0;display:flex;flex-direction:column">
+<a href="{{ post.href }}" aria-hidden="true" tabindex="-1" style="display:block;position:relative;width:100%;aspect-ratio:{{ post.aspect }};flex:1 0 auto;border-bottom:3px solid #5E3023"><image-slot id="post-{{ post.slug }}" shape="rect" src="{{ post.image }}" placeholder="{{ post.img }}"></image-slot></a>
+<div style="padding:{{ cellPad }};display:flex;gap:21px;align-items:flex-start;flex:none">
+<span style="flex:none;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:{{ accent }};color:#F2EEE6;padding:13px 8px">{{ post.cat }}</span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:13px">
+<span style="font-size:47px;font-weight:300;line-height:1;color:{{ accent }}">{{ post.num }}</span>
+<a href="{{ post.href }}" style="font-size:{{ post.titleSize }};font-weight:800;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">{{ post.title }}</a>
+<div style="display:flex;gap:4px 13px;flex-wrap:wrap;align-items:center;font-size:18px;margin-top:8px;border-top:3px solid #5E3023;padding-top:8px"><span>by {{ post.author }}</span><span style="color:{{ accent }};font-weight:600">{{ post.ago }}</span><button onClick="{{ post.onShare }}" aria-label="Share this story" style="margin-left:auto;background:none;border:none;color:#5E3023;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;min-width:44px;padding:0;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>{{ post.shareLabel }}</button></div>
+</div>
+</div>
+</article>
+</sc-for>
+<a href="#" style="grid-column:{{ olderSpan }};background:{{ accent }};color:#F2EEE6;padding:{{ cellPad }};display:flex;flex-direction:column;justify-content:space-between;gap:55px;min-height:233px">
+<span style="font-size:47px;font-weight:300;line-height:1">→</span>
+<span style="font-size:29px;font-weight:800;letter-spacing:0.08em;line-height:1.2;text-transform:uppercase">older<br>stories</span>
+</a>
+</div>
+</section>
+
+
+<footer data-screen-label="Footer" style="display:grid;grid-template-columns:{{ mastCols }}">
+<div style="position:relative;overflow:hidden;padding:{{ secPad }};display:flex;gap:34px;align-items:stretch">
+<img src="./assets/taga-engraving.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:0.22;pointer-events:none">
+<span style="position:relative;align-self:flex-end;flex:none;display:{{ footNameDisp }};color:{{ accent }};writing-mode:vertical-rl;transform:rotate(180deg);font-size:{{ footName }};font-weight:800;letter-spacing:-0.03em;line-height:1;white-space:nowrap">house of taga</span>
+<div style="position:relative;display:flex;flex-direction:column;gap:34px;max-width:520px">
+<span style="display:block;width:21px;height:89px;background:{{ accent }}"></span>
+<p style="margin:0;font-size:{{ footLead }};font-weight:700;letter-spacing:-0.02em;line-height:1.2;text-wrap:pretty">An homage to Chamorro culture: the history of the Marianas, told one story at a time.</p>
+<a href="#top" style="display:flex;align-items:center;gap:13px;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;min-height:44px"><span style="display:block;width:3px;height:29px;background:#5E3023"></span>back to top</a>
+</div>
+</div>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<div style="border-top:4px solid #5E3023;padding:34px 21px;display:flex;align-items:flex-end;gap:8px;color:{{ accent }}">
+<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:21px;font-weight:700;letter-spacing:-0.02em;line-height:1;position:relative;bottom:25px;white-space:nowrap">house of</span>
+<span style="font-size:123px;font-weight:800;letter-spacing:-0.06em;line-height:0.78;white-space:nowrap;padding-bottom:0.24em">taga</span>
+</div>
+</sc-if>
+<div style="border-left:{{ heroRule }};border-top:{{ heroRuleTop }};padding:{{ secPad }};display:flex;flex-direction:{{ footDir }};justify-content:space-between;align-items:{{ footAlign }};gap:34px">
+<div style="display:flex;flex-direction:{{ footDir }};align-items:stretch;gap:0;min-height:{{ footMinH }};min-width:0">
+<nav style="display:flex;flex-direction:{{ footDir }};align-items:stretch;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;line-height:1.2">
+<a href="Pages.dc.html#about" style="writing-mode:{{ footWM }};white-space:nowrap;padding:{{ footItemPad }};border-{{ footRuleSide }}:3px solid #5E3023;min-width:44px;display:flex;align-items:center">about</a>
+<a href="Pages.dc.html#contact" style="writing-mode:{{ footWM }};white-space:nowrap;padding:{{ footItemPad }};border-{{ footRuleSide }}:3px solid #5E3023;min-width:44px;display:flex;align-items:center">contact</a>
+<a href="Pages.dc.html#privacy" style="writing-mode:{{ footWM }};white-space:nowrap;padding:{{ footItemPad }};border-{{ footRuleSide }}:3px solid #5E3023;min-width:44px;display:flex;align-items:center">privacy</a>
+</nav>
+<span style="writing-mode:{{ footWM }};white-space:{{ footWrap }};font-size:18px;line-height:1.2;padding:{{ footItemPad }};display:flex;align-items:center">© 2018 House of Taga / Alexie Zotomayor</span>
+</div>
+<svg viewBox="0 0 100 100" style="flex:none;width:89px;height:89px" fill="none" stroke="{{ accent }}" stroke-width="4"><circle cx="50" cy="50" r="46"></circle><polygon points="14,50 76,14 76,86"></polygon><rect x="42" y="30" width="34" height="40"></rect></svg>
+</div>
+</footer>
+<div style="display:flex;flex-direction:column;gap:8px;padding-bottom:8px"><span style="display:block;height:13px;background:{{ accent }}"></span><span style="display:block;height:13px;background:{{ accent }}"></span></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;red&quot;,&quot;ultramarine&quot;,&quot;caramel&quot;],&quot;default&quot;:&quot;red&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menuOpen: false };
+  posts = [
+    { slug:'saipan-tinian', cat:'WWII', date:'2019-06-10', title:'The Battle of Saipan, Tinian', excerpt:'The Spanish-American War, which partitioned the Marianas between the United States and Germany, and World War I, which gave the Northern Mariana Islands to Japan, set the stage for one of the Pacific’s decisive battles.', img:'battle of saipan' },
+    { slug:'chamorro-migration', cat:'Pre-Contact', date:'2025-02-27', title:'Tracing Ancient Chamorro Migration: A Reporter’s Perspective', excerpt:'It has been over 10 years since I first wrote about the archaeological work spearheaded by Dr. Michael T. Carson.', img:'archaeological dig site' },
+    { slug:'japanese-governor', cat:'Colonial', date:'2025-02-27', title:'How a Japanese governor forced his wife to convert to Catholicism in 1920s Saipan', img:'well wishers, 1920s' },
+    { slug:'finding-amelia', cat:'Colonial', date:'2025-02-25', title:'Still Finding Amelia', img:'plane crash illustration' },
+    { slug:'pension-fund', cat:'Contemporary', date:'2025-02-20', title:'When CNMI pension fund explored bankruptcy option', img:'retirement fund building' },
+    { slug:'fr-hezel', cat:'Colonial', date:'2024-03-28', title:'Fr. Hezel: ‘Philippinization’ not Hispanization', img:'lecture, azucena hall' },
+    { slug:'marines-tinian', cat:'Contemporary', date:'2024-03-28', title:'US Marines make historic Tinian landing in 2012', img:'north field, tinian' },
+    { slug:'sam-mcphetres', cat:'Contemporary', date:'2024-03-27', title:'Remembering Sam McPhetres', img:'portrait' },
+    { slug:'omang', cat:'Colonial', date:'2024-03-15', title:'“Omang”', img:'archaeologist by the beach' },
+    { slug:'typhoon-yutu', cat:'Colonial', date:'2024-03-14', title:'Supertyphoon Yutu banishes Japanese-era dwellings into oblivion', img:'japanese-period house' },
+    { slug:'heritage-tourism', cat:'Contemporary', date:'2024-02-29', title:'Bright prospects for heritage tourism in the Marianas', img:'aichi plane wreckage' },
+  ];
+  share(x) {
+    const url = location.origin + location.pathname + '#' + x.slug;
+    if (navigator.share) { navigator.share({ title: x.title, url }).catch(() => {}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).catch(() => {});
+    this.setState({ copied: x.slug });
+    clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: null }), 1600);
+  }
+  layout(list, bp) {
+    // [type, desktop span of 6, tablet span of 4, aspect]
+    const plan = [
+      ['wide', 4, 4, '1.618/1'], ['vcat', 2, 2, '1/1.618'], ['vtitle', 2, 2, '1/1.618'],
+      ['offset', 2, 2, '1/1'], ['vcat', 2, 2, '1/1.2'], ['wide', 3, 4, '1.618/1'],
+      ['vtitle', 3, 2, '1/1.2'], ['vtitle', 2, 2, '1/1.618'], ['offset', 4, 4, '1.618/1'], ['vcat', 4, 2, '1.618/1'],
+    ];
+    return list.map((x, i) => {
+      const [type, ds, ts, aspect] = plan[i % plan.length];
+      const span = bp === 'desktop' ? ds : bp === 'tablet' ? ts : 2;
+      const t = bp === 'mobile' && type === 'vtitle' && x.title.length > 34 ? 'vcat' : type;
+      return { ...x, span: 'span ' + span, aspect: bp === 'mobile' && t !== 'wide' ? '1.2/1' : aspect,
+        titleSize: bp !== 'mobile' && span >= 4 ? '47px' : '29px' };
+    });
+  }
+  catFromUrl() { const c = new URLSearchParams(location.search).get('cat'); return this.cats.find(x => x.key === c) ? c : null; }
+  cats = [{ key:'pre-contact', period:'Pre-Contact' }, { key:'colonial', period:'Colonial' }, { key:'wwii', period:'WWII' }, { key:'contemporary', period:'Contemporary' }];
+  setCat(c) { const u = new URL(location.href); if (c) u.searchParams.set('cat', c); else u.searchParams.delete('cat'); history.pushState(null, '', u); this.setState({ cat: c, menuOpen: false }); const s = document.querySelector('[data-screen-label=Latest]'); if (s && c) scrollTo(0, s.getBoundingClientRect().top + scrollY - 21); else if (!c) scrollTo(0, 0); }
+  componentDidMount() {
+    this.setState({ cat: this.catFromUrl() });
+    this.onPop = () => this.setState({ cat: this.catFromUrl() });
+    addEventListener('popstate', this.onPop);
+    fetch('./stories/index.json').then(r => r.json()).then(idx => {
+      const feat = idx.find(p => p.slug === 'the-battle-of-saipan-tinian');
+      const toPost = p => ({ slug: p.slug, cat: p.period, date: p.date.slice(0, 10), title: p.title, excerpt: p.dek || p.excerpt, img: p.imageAlt || p.title, image: p.image || '' });
+      this.setState({ allPosts: idx.map(toPost) });
+      const list = [feat].concat(idx.filter(p => p !== feat)).filter(Boolean).slice(0, 11);
+      this.setState({ posts: list.map(p => ({ slug: p.slug, cat: p.period, date: p.date.slice(0, 10), title: p.title, excerpt: p.dek || p.excerpt, img: p.imageAlt || p.title, image: p.image || '' })) });
+    }).catch(() => {});
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+  ago(d) {
+    const s = (Date.now() - new Date(d + 'T12:00:00').getTime()) / 1000;
+    const u = [['year',31536000],['month',2592000],['week',604800],['day',86400],['hour',3600],['minute',60]];
+    for (const [n, v] of u) { const q = Math.floor(s / v); if (q >= 1) return q + ' ' + n + (q > 1 ? 's' : '') + ' ago'; }
+    return 'just now';
+  }
+  renderVals() {
+    const p = this.props, w = this.state.w;
+    const bp = w >= 1024 ? 'desktop' : w >= 640 ? 'tablet' : 'mobile';
+    const d = bp === 'desktop', m = bp === 'mobile';
+    const cols = d ? 3 : bp === 'tablet' ? 2 : 1;
+    const accent = { red:'#C8372A', ultramarine:'#2B45A0', caramel:'#9A5A2E' }[p.accent ?? 'red'];
+    const catObj = this.cats.find(c => c.key === this.state.cat);
+    const src = catObj && this.state.allPosts ? this.state.allPosts.filter(x => x.cat === catObj.period) : (this.state.posts || this.posts);
+    const all = src.map((x, i) => {
+      const [y, mo, da] = x.date.split('-');
+      const post = { ...x, author:'House of Taga Desk', ago:this.ago(x.date), num:String(i).padStart(2,'0'), year:y, mmdd:mo + '.' + da, shareLabel: this.state.copied === x.slug ? 'copied' : 'share' };
+      post.href = 'Story.dc.html?s=' + x.slug; post.image = x.image || ''; post.onShare = () => this.share(post);
+      return post;
+    });
+    const pad = m ? '21px' : bp === 'tablet' ? '34px' : 'clamp(34px,4.5vw,89px)';
+    const names = ['pre-contact period','colonial period','wwii','contemporary period'];
+    const TAGA = !d ? Math.min(199, Math.floor((w * 0.854 - 34 - (m ? 21 : 34) - (m ? 21 : 34) - 13) / 3.35)) + 'px' : w >= 1280 ? 'clamp(160px,15vw,300px)' : 'clamp(110px,11vw,220px)';
+    return {
+      accent, pad,
+      mariM: m ? '13px' : d ? '34px' : '21px',
+      mariCol: m ? '44px' : '60px',
+      isDesktop: d, isCompact: !d, isMobile: m, isTablet: bp === 'tablet',
+      menuOpen: this.state.menuOpen && !d,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      mastCols: d ? 'minmax(0,1.618fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      mastH: m ? '560px' : d ? 'clamp(900px,62vw,1000px)' : '720px',
+      tagaSize: TAGA,
+      glyphH: 'calc(' + TAGA + ' * 1.15)',
+      navH: m ? '288px' : '340px',
+      tagaSizeOld: !d ? Math.min(199, Math.floor((w * 0.854 - 34 - (m ? 21 : 34) - (m ? 21 : 34) - 13) / 3.35)) + 'px' : w >= 1280 ? 'clamp(199px,19vw,377px)' : d ? 'clamp(123px,13.8vw,280px)' : '199px',
+      headCols: w >= 1280 ? 'minmax(0,1fr) minmax(0,1fr)' : d ? 'minmax(0,1.618fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      glyphOpacity: d ? '0.28' : '0.16',
+      padTopC: m ? '34px' : '55px',
+      houseSize: 'max(18px, calc(' + TAGA + ' * 0.17))',
+      housePad: 'calc(' + TAGA + ' * 0.212)',
+      houseSizeOld: m ? '21px' : !d ? '34px' : w >= 1280 ? 'clamp(47px,4.2vw,76px)' : d ? 'clamp(29px,3vw,55px)' : '47px',
+      nameTop: m ? '34px' : '55px',
+      barTop: m ? '190px' : d ? '0px' : '340px',
+      homageSize: m ? '18px' : '29px',
+      heroImgMin: d ? '0px' : m ? '320px' : '480px',
+      heroRule: d ? '4px solid #5E3023' : 'none',
+      heroRuleTop: d ? 'none' : '4px solid #5E3023',
+      heroTextPad: m ? '34px 21px 55px' : d ? '55px clamp(34px,3.4vw,55px)' : '55px 34px',
+      secPad: m ? '55px 21px' : d ? '89px ' + pad : '89px 34px',
+      h2Size: m ? '29px' : '47px',
+      cellPad: m ? '21px' : '34px',
+      gridCols: `repeat(${cols * 2}, minmax(0,1fr))`,
+      stories: this.layout(catObj ? all : all.slice(1), bp),
+      catOn: !!catObj, clearCat: (e) => { e.preventDefault(); this.setCat(null); },
+      listTitle: catObj ? names[this.cats.indexOf(catObj)] : 'latest stories',
+      listCount: catObj ? String(all.length).padStart(2, '0') + ' stories' : '',
+      olderSpan: 'span 2',
+      vcatSize: m ? '29px' : '47px',
+      bigTitle: m ? '29px' : '47px',
+      todayShort: new Date().toLocaleDateString('en-US', { day:'2-digit', month:'short', year:'numeric' }),
+      periods: names.map((n, i) => ({ num:'0' + (i + 1), name:n, href:'?cat=' + this.cats[i].key, go:(e) => { e.preventDefault(); this.setCat(this.cats[i].key); }, current: this.state.cat === this.cats[i].key ? 'page' : 'false', bg: this.state.cat === this.cats[i].key ? accent : 'transparent', fg: this.state.cat === this.cats[i].key ? '#F2EEE6' : '#5E3023', numC: this.state.cat === this.cats[i].key ? '#F2EEE6' : accent, rule: i === 3 ? 'none' : '3px solid #5E3023', off:(i * (m ? 21 : 34)) + 'px', w:(m ? 82 : 70) - i * 4 + '%' })),
+      diagH: m ? '560px' : d ? 'clamp(640px,55vw,820px)' : '640px',
+      diagW: m ? '420px' : d ? '760px' : '600px',
+      diagHead: m ? '29px' : '47px',
+      diagItem: m ? '18px' : '29px',
+      footSize: m ? '47px' : '76px',
+      footName: m ? '29px' : '47px',
+      footNameDisp: m ? 'none' : 'block', isMobile: m,
+      footDir: m ? 'column' : 'row', footMinH: m ? '0' : '340px', footWM: m ? 'horizontal-tb' : 'vertical-rl',
+      footRuleSide: m ? 'bottom' : 'left', footAlign: m ? 'stretch' : 'flex-end', footWrap: m ? 'normal' : 'nowrap', footItemPad: m ? '13px 0' : '0 13px 13px',
+      footLead: m ? '29px' : '47px',
+      hero: all[0], lead: all[1], rest: all.slice(2),
+    };
+  }
+}
+</script>
+</body>
+</html>

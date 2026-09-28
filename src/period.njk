@@ -1,0 +1,12 @@
+---
+# One listing per period → /wwii/, /colonial/ …
+pagination:
+  data: periods
+  size: 1
+  alias: p
+permalink: "/{{ p.key }}/"
+layout: home.njk
+eleventyComputed:
+  title: "{{ p.name }}"
+  description: "{{ p.note }}"
+---

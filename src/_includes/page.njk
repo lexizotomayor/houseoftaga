@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+{#- About, Contact, Privacy (and Thanks / 404). Front matter: pageName, pageNum. -#}
+{%- set tabs = [
+  { label: "home", url: "/" },
+  { label: "about", url: "/about/", current: page.url == "/about/" },
+  { label: "contact", url: "/contact/", current: page.url == "/contact/" },
+  { label: "privacy", url: "/privacy/", current: page.url == "/privacy/" }
+] %}
+<div class="page-wrap">
+{% include "partials/head-small.njk" %}
+<main id="content" class="split page-main">
+  <div class="side">
+    <h1>{{ pageName }}</h1>
+    <div class="page-num" aria-hidden="true"><span>{{ pageNum }}</span><span class="redbar"></span></div>
+  </div>
+  <div class="main">
+    {{ content | safe }}
+  </div>
+</main>
+{% set footBack = "home" %}{% include "partials/foot-simple.njk" %}
+</div>

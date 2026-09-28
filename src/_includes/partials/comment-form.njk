@@ -1,0 +1,20 @@
+{#- Netlify Forms: one form for all stories; the story slug travels in a hidden field.
+    Submissions arrive in Netlify → Forms → "comments". Approve one by adding it to
+    src/_data/comments/<slug>.json (see the README there) and pushing. -#}
+<form class="form" name="comments" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/?from={{ story.slug }}" data-ajax>
+  <input type="hidden" name="form-name" value="comments">
+  <input type="hidden" name="story" value="{{ story.slug }}">
+  <p hidden><label>Leave empty <input name="bot-field"></label></p>
+  <p class="prompt">A memory, a correction, a question? Håfa un hasso — tell us.</p>
+  <label class="field"><span>comment</span><textarea name="comment" rows="5" required placeholder="Write your comment"></textarea></label>
+  <div class="pair">
+    <label class="field"><span>name</span><input name="name" required autocomplete="name" placeholder="Shown with your comment"></label>
+    <label class="field"><span>email</span><input name="email" type="email" autocomplete="email" placeholder="Optional, never shown"></label>
+  </div>
+  <div class="submit-row">
+    <span>Comments are read before they appear. See <a class="u-red" href="/privacy/">privacy</a>.</span>
+    <button class="btn" type="submit">post<span class="arrow" aria-hidden="true">→</span></button>
+  </div>
+  <p class="form-note" data-done hidden role="status">Si Yu’os ma’åse’ — your comment is in. It will appear here once it has been read.</p>
+  <p class="form-error" data-fail hidden role="alert">That didn’t go through. Please try again, or email {{ site.email }}.</p>
+</form>

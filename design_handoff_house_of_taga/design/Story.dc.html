@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;-webkit-font-smoothing:antialiased}
+a{color:#5E3023;text-decoration:none}
+a:hover{color:#C8372A}
+*,*::before,*::after{box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+button{font:inherit;color:inherit}
+</style>
+</helmet>
+<div id="top" style="background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;overflow-x:clip">
+
+<div style="position:sticky;top:0;z-index:5;height:8px;background:#F2EEE6;border-bottom:1px solid #5E3023"><span style="display:block;height:8px;width:{{ progress }};background:#C8372A"></span></div>
+
+<header data-screen-label="Header" style="border-bottom:4px solid #5E3023">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:34px;padding:{{ headPad }}">
+<a href="Home.dc.html" aria-label="House of Taga home" style="display:flex;align-items:flex-end;gap:8px;color:#5E3023">
+<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:{{ houseSize }};font-weight:700;letter-spacing:-0.02em;line-height:1;position:relative;bottom:{{ housePad }};white-space:nowrap">house of</span>
+<span style="font-size:{{ tagaSize }};font-weight:800;letter-spacing:-0.06em;line-height:0.78;white-space:nowrap;padding-bottom:0.24em">taga</span>
+<img src="./assets/taga-glyph.png" alt="" aria-hidden="true" style="height:{{ glyphH }};width:auto;opacity:0.35;flex:none">
+</a>
+<nav style="display:flex;flex-wrap:wrap;align-items:stretch;font-size:18px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;line-height:1.2">
+<sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+<a href="{{ n.href }}" style="display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 13px;border-left:3px solid #5E3023;background:{{ n.bg }};color:{{ n.fg }};white-space:nowrap"><span style="color:{{ n.numC }}">{{ n.num }}</span>{{ n.label }}</a>
+</sc-for>
+</nav>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding-bottom:34px"><span style="display:block;height:13px;background:#C8372A"></span><span style="display:block;height:13px;background:#C8372A"></span></div>
+</header>
+
+<section data-screen-label="Title" style="display:grid;grid-template-columns:{{ cols }};border-bottom:4px solid #5E3023">
+<div style="border-right:{{ sideRule }};padding:{{ sidePad }};display:flex;gap:21px;align-items:flex-end;justify-content:{{ sideJustify }}">
+<a href="{{ catHref }}" style="flex:none;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:#C8372A;color:#F2EEE6;padding:13px 8px">{{ story.period }}</a>
+<div style="display:flex;flex-direction:column;gap:4px;text-align:{{ dateAlign }}"><time datetime="{{ story.date }}" style="font-size:29px;font-weight:800;letter-spacing:-0.01em;line-height:1.2">{{ story.full }}</time><span style="font-size:18px;font-weight:600;line-height:1.2;color:#C8372A">{{ story.ago }}</span></div>
+</div>
+<div style="padding:{{ titlePad }};display:flex;flex-direction:column;gap:34px;min-width:0">
+<h1 style="margin:0;font-size:{{ h1Size }};font-weight:800;letter-spacing:-0.04em;line-height:0.95;text-wrap:balance">{{ story.title }}</h1>
+<sc-if value="{{ story.dek }}" hint-placeholder-val="{{ false }}">
+<p style="margin:0;font-size:{{ dekSize }};font-weight:500;letter-spacing:-0.01em;line-height:1.3;max-width:28em;text-wrap:pretty">{{ story.dek }}</p>
+</sc-if>
+<div style="display:flex;flex-wrap:wrap;gap:8px 34px;align-items:center;border-top:3px solid #5E3023;padding-top:13px">
+<span>by <strong style="font-weight:800">{{ story.author }}</strong></span>
+<span style="color:#C8372A;font-weight:600">{{ readLabel }}</span>
+<button onClick="{{ share }}" aria-label="Share this story" style="margin-left:auto;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:44px;padding:0;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line></svg>{{ shareLabel }}</button>
+</div>
+</div>
+</section>
+
+<sc-if value="{{ heroReady }}" hint-placeholder-val="{{ false }}">
+<figure data-screen-label="Hero" style="margin:0;border-bottom:4px solid #5E3023">
+<div style="display:flex;justify-content:center;background:#5E3023"><div style="position:relative;width:min(100%, calc({{ heroMaxH }} * {{ heroRatio }}));aspect-ratio:{{ heroRatio }}"><image-slot id="hero-{{ story.slug }}" shape="rect" fit="contain" src="{{ story.image }}" placeholder="{{ story.imageAlt }}"></image-slot></div></div>
+</figure>
+</sc-if>
+
+<section data-screen-label="Body" style="display:grid;grid-template-columns:{{ cols }}">
+<aside style="border-right:{{ sideRule }};border-bottom:{{ railRuleB }};padding:{{ railPad }}">
+<div style="position:{{ railPos }};top:55px;display:flex;flex-direction:column;gap:55px">
+<sc-if value="{{ hasShort }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:13px">
+<span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">read it</span>
+<div role="group" aria-label="Story length" style="display:grid;grid-template-columns:1fr 1fr;border:3px solid #5E3023">
+<button onClick="{{ setShort }}" aria-pressed="{{ isShort }}" style="min-height:55px;padding:8px 13px;border:none;border-right:3px solid #5E3023;background:{{ shortBg }};color:{{ shortFg }};cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:0;text-align:left;line-height:1.2"><span style="font-size:18px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">short</span><span style="font-size:18px;font-weight:500">{{ story.shortMin }} min</span></button>
+<button onClick="{{ setFull }}" aria-pressed="{{ isFull }}" style="min-height:55px;padding:8px 13px;border:none;background:{{ fullBg }};color:{{ fullFg }};cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:0;text-align:left;line-height:1.2"><span style="font-size:18px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">full</span><span style="font-size:18px;font-weight:500">{{ story.readMin }} min</span></button>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ hasTimeline }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column">
+<span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:13px;border-bottom:4px solid #5E3023">{{ story.timelineTitle }}</span>
+<sc-for list="{{ story.timeline }}" as="t" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:89px minmax(0,1fr);gap:13px;padding:13px 0;border-bottom:3px solid #5E3023;align-items:baseline">
+<span style="font-weight:800;color:#C8372A;white-space:nowrap">{{ t.date }}</span><span style="text-wrap:pretty">{{ t.what }}</span>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</aside>
+
+<article style="padding:{{ bodyPad }};min-width:0;display:flex;flex-direction:column;gap:34px">
+<div data-story-body="true" style="width:100%;max-width:31em;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;gap:29px;font-size:{{ bodySize }};line-height:1.7;color:#3D1F16;text-wrap:pretty;hyphens:auto">
+<sc-for list="{{ blocks }}" as="b" hint-placeholder-count="8">
+<sc-if value="{{ b.isNote }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;gap:21px;align-items:stretch;background:#5E3023;color:#F2EEE6;padding:21px 21px 21px 0;font-size:18px;line-height:1.618"><span style="flex:none;width:21px;background:#C8372A"></span><p style="margin:0;font-style:italic">{{ b.text }}</p></div>
+</sc-if>
+<sc-if value="{{ b.isLead }}" hint-placeholder-val="{{ false }}">
+<p style="margin:0;font-size:{{ leadSize }};font-weight:700;line-height:1.3;letter-spacing:-0.01em;color:#5E3023">{{ b.text }}</p>
+</sc-if>
+<sc-if value="{{ b.isP }}" hint-placeholder-val="{{ true }}">
+<p style="margin:0">{{ b.text }}</p>
+</sc-if>
+<sc-if value="{{ b.isH }}" hint-placeholder-val="{{ false }}">
+<h2 style="margin:21px 0 0;font-size:29px;font-weight:800;letter-spacing:-0.01em;line-height:1.2;color:#5E3023;display:flex;gap:13px;align-items:center;hyphens:none"><span style="flex:none;width:21px;height:21px;background:#C8372A"></span>{{ b.text }}</h2>
+</sc-if>
+<sc-if value="{{ b.isQuote }}" hint-placeholder-val="{{ false }}">
+<blockquote style="margin:0;padding:0 0 0 34px;border-left:8px solid #C8372A;font-size:{{ leadSize }};font-weight:600;line-height:1.4;letter-spacing:-0.01em;color:#5E3023">{{ b.text }}</blockquote>
+</sc-if>
+<sc-if value="{{ b.isPull }}" hint-placeholder-val="{{ false }}">
+<blockquote style="margin:21px 0;display:flex;flex-direction:column;gap:13px;border-top:13px solid #C8372A;padding-top:21px;color:#5E3023"><span style="font-size:{{ quoteSize }};font-weight:800;letter-spacing:-0.03em;line-height:1.05;text-transform:lowercase;hyphens:none">{{ b.text }}</span><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1.4;text-transform:uppercase">{{ b.cite }}</span></blockquote>
+</sc-if>
+<sc-if value="{{ b.isList }}" hint-placeholder-val="{{ false }}">
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ b.items }}" as="li" hint-placeholder-count="3"><li style="display:flex;gap:13px"><span style="flex:none;width:13px;height:3px;background:#C8372A;margin-top:0.85em"></span><span>{{ li }}</span></li></sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{ b.isImgBad }}" hint-placeholder-val="{{ false }}">
+<figure style="margin:21px 0;display:flex;align-items:center;justify-content:center;aspect-ratio:1.414/1;border:3px solid #5E3023;background:#E8E1D5;padding:21px;text-align:center;font-size:18px;line-height:1.4;color:#5E3023">{{ b.alt }}</figure>
+</sc-if>
+<sc-if value="{{ b.isImg }}" hint-placeholder-val="{{ false }}">
+<figure style="margin:21px 0;display:flex;flex-direction:column;gap:8px">
+<div style="position:relative;width:100%;aspect-ratio:{{ b.ratio }};border:3px solid #5E3023"><image-slot id="{{ b.id }}" shape="rect" fit="contain" src="{{ b.src }}" placeholder="{{ b.alt }}"></image-slot></div>
+<sc-if value="{{ b.caption }}" hint-placeholder-val="{{ false }}"><figcaption style="font-size:18px;line-height:1.4;color:#5E3023;display:flex;gap:13px"><span style="flex:none;width:3px;background:#C8372A"></span>{{ b.caption }}</figcaption></sc-if>
+</figure>
+</sc-if>
+<sc-if value="{{ b.isEmbed }}" hint-placeholder-val="{{ false }}">
+<figure style="margin:21px 0;position:relative;aspect-ratio:16/9;border:3px solid #5E3023;background:#5E3023"><iframe src="{{ b.embed }}" title="Video" loading="lazy" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></figure>
+</sc-if>
+</sc-for>
+<sc-if value="{{ isShort }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ setFull }}" style="align-self:flex-start;display:flex;align-items:center;gap:13px;min-height:55px;padding:13px 21px;background:#C8372A;color:#F2EEE6;border:none;cursor:pointer;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:#5E3023">read the full story · {{ story.readMin }} min</button>
+</sc-if>
+</div>
+
+<sc-if value="{{ hasTags }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;gap:8px;width:100%;max-width:651px;margin-left:auto;margin-right:auto;padding-top:21px;border-top:3px solid #5E3023">
+<sc-for list="{{ story.tags }}" as="tag" hint-placeholder-count="6">
+<a href="#" style="display:flex;align-items:center;min-height:44px;padding:8px 13px;border:3px solid #5E3023;font-size:18px;font-weight:700;letter-spacing:0.04em;line-height:1.2" style-hover="background:#5E3023;color:#F2EEE6">{{ tag }}</a>
+</sc-for>
+</div>
+</sc-if>
+</article>
+</section>
+
+<sc-if value="{{ hasGallery }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Gallery" style="border-top:4px solid #5E3023;padding:{{ secPad }}">
+<div style="display:flex;align-items:center;gap:21px;margin-bottom:55px;flex-wrap:wrap">
+<h2 style="margin:0;font-size:{{ h2Size }};font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase">from the archive</h2>
+<span style="flex:1 1 89px;height:13px;background:#C8372A"></span>
+<span style="font-size:18px;font-weight:700;letter-spacing:0.12em">{{ galleryCount }}</span>
+</div>
+<div style="column-count:{{ galColsN }};column-gap:21px">
+<sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
+<figure style="margin:0 0 21px;break-inside:avoid;display:flex;flex-direction:column;border:3px solid #5E3023;background:#F2EEE6">
+<div style="position:relative;width:100%;aspect-ratio:{{ g.ratio }};border-bottom:3px solid #5E3023"><image-slot id="{{ g.id }}" shape="rect" fit="contain" src="{{ g.src }}" placeholder="{{ g.cap }}"></image-slot></div>
+<figcaption style="display:flex;gap:13px;align-items:baseline;padding:13px 21px;font-size:18px;line-height:1.4;text-wrap:pretty"><span style="font-weight:300;color:#C8372A">{{ g.num }}</span><span>{{ g.cap }}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<section data-screen-label="Comments" id="comments" style="display:grid;grid-template-columns:{{ cols }};border-top:4px solid #5E3023">
+<div style="border-right:{{ sideRule }};border-bottom:{{ railRuleB }};padding:{{ railPad }};display:flex;gap:21px;align-items:flex-start;justify-content:{{ sideJustify }}">
+<div style="display:flex;flex-direction:column;gap:13px;align-items:{{ cmAlign }}">
+<h2 style="margin:0;font-size:{{ h2Size }};font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase">comments</h2>
+<span style="font-size:47px;font-weight:300;line-height:1;color:#C8372A">{{ cmCount }}</span>
+</div>
+</div>
+<div style="padding:{{ bodyPad }};min-width:0">
+<div style="width:100%;max-width:651px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;gap:55px">
+<form onSubmit="{{ cmSubmit }}" style="display:flex;flex-direction:column;gap:34px">
+<p style="margin:0;font-size:{{ leadSize }};font-weight:700;letter-spacing:-0.01em;line-height:1.3;text-wrap:pretty">A memory, a correction, a question? Håfa un hasso — tell us.</p>
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">comment</span><textarea required rows="5" value="{{ cm.text }}" onChange="{{ cmText }}" placeholder="Write your comment" style="padding:13px;border:3px solid #5E3023;background:transparent;font-size:18px;line-height:1.618;resize:vertical;outline:none;border-radius:0;color:#3D1F16" style-focus="border-color:#C8372A"></textarea></label>
+<div style="display:grid;grid-template-columns:{{ cmCols }};gap:34px">
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">name</span><input required value="{{ cm.name }}" onChange="{{ cmName }}" placeholder="Shown with your comment" style="min-height:55px;padding:13px 0;border:none;border-bottom:3px solid #5E3023;background:transparent;font-size:18px;outline:none;border-radius:0;color:#3D1F16" style-focus="border-bottom-color:#C8372A"></label>
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">email</span><input type="email" value="{{ cm.email }}" onChange="{{ cmEmail }}" placeholder="Optional, never shown" style="min-height:55px;padding:13px 0;border:none;border-bottom:3px solid #5E3023;background:transparent;font-size:18px;outline:none;border-radius:0;color:#3D1F16" style-focus="border-bottom-color:#C8372A"></label>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:21px;align-items:center;justify-content:space-between">
+<span style="font-size:18px;max-width:26em;text-wrap:pretty">Comments are read before they appear. See <a href="Pages.dc.html#privacy" style="font-weight:700;border-bottom:3px solid #C8372A">privacy</a>.</span>
+<button type="submit" style="display:flex;align-items:center;gap:21px;min-height:55px;padding:13px 34px;background:#C8372A;color:#F2EEE6;border:none;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer" style-hover="background:#5E3023">post<span style="font-size:29px;font-weight:300;line-height:1">→</span></button>
+</div>
+<sc-if value="{{ cmThanks }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:13px;align-items:center;font-weight:700"><span style="flex:none;width:21px;height:21px;background:#C8372A"></span>Si Yu’os ma’åse’ — your comment is posted.</div></sc-if>
+</form>
+<sc-if value="{{ cmHas }}" hint-placeholder-val="{{ false }}">
+<ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:4px solid #5E3023">
+<sc-for list="{{ cmList }}" as="c" hint-placeholder-count="2">
+<li style="display:flex;gap:21px;padding:34px 0;border-bottom:3px solid #5E3023">
+<span style="flex:none;width:55px;height:55px;background:#5E3023;color:#F2EEE6;display:flex;align-items:center;justify-content:center;font-size:29px;font-weight:800;line-height:1;text-transform:lowercase">{{ c.initial }}</span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;flex-wrap:wrap;gap:0 13px;align-items:baseline"><strong style="font-size:18px;font-weight:800">{{ c.name }}</strong><span style="font-size:18px;font-weight:600;color:#C8372A">{{ c.ago }}</span></div>
+<p style="margin:0;font-size:18px;line-height:1.7;color:#3D1F16;white-space:pre-line;overflow-wrap:anywhere">{{ c.text }}</p>
+</div>
+</li>
+</sc-for>
+</ol>
+</sc-if>
+</div>
+</div>
+</section>
+
+<nav data-screen-label="Next" aria-label="More stories" style="display:grid;grid-template-columns:{{ pnCols }};border-top:4px solid #5E3023">
+<a href="{{ prev.href }}" style="padding:{{ pnPad }};display:flex;flex-direction:column;gap:21px;border-right:{{ pnRule }};border-bottom:{{ pnRuleB }};min-width:0" style-hover="background:#E8E1D5">
+<span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;display:flex;align-items:center;gap:13px"><span style="font-size:47px;font-weight:300;line-height:1;color:#C8372A">←</span>older</span>
+<span style="font-size:29px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;text-wrap:balance">{{ prev.title }}</span>
+</a>
+<a href="{{ next.href }}" style="padding:{{ pnPad }};display:flex;flex-direction:column;gap:21px;background:#C8372A;color:#F2EEE6;min-width:0" style-hover="background:#5E3023">
+<span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;display:flex;align-items:center;gap:13px;justify-content:space-between">newer<span style="font-size:47px;font-weight:300;line-height:1">→</span></span>
+<span style="font-size:29px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;text-wrap:balance">{{ next.title }}</span>
+</a>
+</nav>
+
+<section data-screen-label="Related" style="border-top:4px solid #5E3023;padding:{{ secPad }}">
+<div style="display:flex;align-items:center;gap:21px;margin-bottom:55px;flex-wrap:wrap">
+<h2 style="margin:0;font-size:{{ h2Size }};font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase">more {{ story.period }}</h2>
+<span style="flex:1 1 89px;height:13px;background:#C8372A"></span>
+</div>
+<div style="display:grid;grid-template-columns:{{ relCols }};gap:0 55px;border-top:4px solid #5E3023">
+<sc-for list="{{ related }}" as="r" hint-placeholder-count="6">
+<a href="{{ r.href }}" style="display:grid;grid-template-columns:{{ relRow }};gap:21px;align-items:start;padding:21px 0;border-bottom:3px solid #5E3023;min-width:0">
+<div style="position:relative;aspect-ratio:1/1"><image-slot id="rel-{{ r.slug }}" shape="rect" src="{{ r.image }}" placeholder="{{ r.imageAlt }}"></image-slot></div>
+<div style="display:flex;gap:13px;align-items:flex-start;min-width:0">
+<span style="flex:none;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:#C8372A;color:#F2EEE6;padding:13px 8px">{{ r.period }}</span>
+<span style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:29px;font-weight:800;letter-spacing:-0.02em;line-height:1.2;text-wrap:balance">{{ r.title }}</span><span style="display:flex;flex-wrap:wrap;gap:0 13px;font-size:18px"><time style="font-weight:700">{{ r.full }}</time><span style="color:#C8372A;font-weight:600">{{ r.ago }}</span></span></span>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="border-top:4px solid #5E3023;display:flex;flex-direction:column">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:21px;padding:{{ footPad }}">
+<a href="#top" style="display:flex;align-items:center;gap:13px;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;min-height:44px"><span style="display:block;width:3px;height:29px;background:#5E3023"></span>back to top</a>
+<nav style="display:flex;flex-wrap:wrap;gap:0 34px;font-size:18px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase"><a href="Pages.dc.html#about" style="padding:8px 0">about</a><a href="Pages.dc.html#contact" style="padding:8px 0">contact</a><a href="Pages.dc.html#privacy" style="padding:8px 0">privacy</a></nav>
+<span style="font-size:18px">© 2018 House of Taga / Alexie Zotomayor</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding-bottom:8px"><span style="display:block;height:13px;background:#C8372A"></span><span style="display:block;height:13px;background:#C8372A"></span></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, p: 0, copied: false, s: null, idx: [], mode: null, dims: {}, cm: { name: '', email: '', text: '' }, comments: [], cmThanks: false };
+  slug() { const q = new URLSearchParams(location.search).get('s'); return q || 'the-battle-of-saipan-tinian'; }
+  load() {
+    const slug = this.slug();
+    this.setState({ comments: this.readComments(slug), cmThanks: false });
+    fetch('./stories/' + slug + '.json').then(r => r.json()).then(s => { this.setState({ s, mode: null }, () => { scrollTo(0, 0); this.onScroll(); }); this.probe(s); }).catch(() => {});
+  }
+  probe(s) {
+    const list = [s.image].concat(...[s.blocks || [], s.short || []].map(l => l.flatMap(b => b.type === 'img' ? [b.src] : b.type === 'gallery' ? b.images.map(i => i.src) : []))).filter(Boolean);
+    const srcs = new Set(list);
+    srcs.forEach(u => { if (this.state.dims[u] !== undefined) return; const im = new Image(); im.onload = () => this.setState(st => ({ dims: { ...st.dims, [u]: im.naturalWidth ? im.naturalWidth / im.naturalHeight : 'bad' } })); im.onerror = () => this.setState(st => ({ dims: { ...st.dims, [u]: 'bad' } })); im.src = u; });
+  }
+  readComments(slug) { try { return JSON.parse(localStorage.getItem('hot-comments-' + slug) || '[]'); } catch (e) { return []; } }
+  cmField(k) { return (e) => { const v = e.target.value; this.setState(st => ({ cm: { ...st.cm, [k]: v } })); }; }
+  postComment(e) {
+    e.preventDefault();
+    const { name, email, text } = this.state.cm; if (!name.trim() || !text.trim()) return;
+    const slug = this.slug();
+    const list = [{ name: name.trim(), text: text.trim(), date: new Date().toISOString() }].concat(this.state.comments);
+    try { localStorage.setItem('hot-comments-' + slug, JSON.stringify(list)); } catch (err) {}
+    this.setState({ comments: list, cm: { name, email, text: '' }, cmThanks: true });
+  }
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onScroll = () => { const h = document.documentElement; const max = h.scrollHeight - innerHeight; this.setState({ p: max > 0 ? Math.min(1, scrollY / max) : 0 }); };
+    this.onPop = () => this.load();
+    addEventListener('resize', this.onResize); addEventListener('scroll', this.onScroll, { passive: true }); addEventListener('popstate', this.onPop);
+    this.onResize();
+    this.iv = setInterval(() => this.setState({ now: Date.now() }), 60000);
+    fetch('./stories/index.json').then(r => r.json()).then(idx => this.setState({ idx })).catch(() => {});
+    this.load();
+  }
+  componentWillUnmount() { clearInterval(this.iv); removeEventListener('resize', this.onResize); removeEventListener('scroll', this.onScroll); removeEventListener('popstate', this.onPop); }
+  ago(iso) {
+    const s = (Date.now() - new Date(iso).getTime()) / 1000;
+    const u = [['year',31536000],['month',2592000],['week',604800],['day',86400],['hour',3600],['minute',60]];
+    for (const [n, v] of u) { const q = Math.floor(s / v); if (q >= 1) return q + ' ' + n + (q > 1 ? 's' : '') + ' ago'; }
+    return 'just now';
+  }
+  full(iso) { return new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'Pacific/Saipan' }); }
+  href(slug) { return 'Story.dc.html?s=' + slug; }
+  embed(u) { const m = String(u).match(/(?:v=|youtu\.be\/|embed\/)([\w-]{6,})/); return m ? 'https://www.youtube.com/embed/' + m[1] : u; }
+  share() {
+    const url = location.href, title = this.state.s ? this.state.s.title : document.title;
+    if (navigator.share) { navigator.share({ title, url }).catch(() => {}); return; }
+    navigator.clipboard && navigator.clipboard.writeText(url).catch(() => {});
+    this.setState({ copied: true }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ copied: false }), 1600);
+  }
+  renderVals() {
+    const w = this.state.w, d = w >= 1024, m = w < 640;
+    const TAGA = m ? 76 : d ? 123 : 99;
+    const pad = m ? '21px' : d ? 'clamp(34px,4.5vw,89px)' : '34px';
+    const s = this.state.s || { slug: '', title: '', period: '', date: new Date().toISOString(), author: '', tags: [], blocks: [], readMin: 0 };
+    const dims = this.state.dims;
+    const hasShort = !!(s.short && s.short.length);
+    const isShort = hasShort && this.state.mode !== 'full';
+    let src = (isShort ? s.short : s.blocks) || [];
+    // trailing run of images → archive gallery (full mode only)
+    let tail = src.length; while (tail > 0 && src[tail - 1].type === 'img') tail--;
+    const galImgs = (isShort ? [] : src.slice(tail).concat(...src.filter(b => b.type === 'gallery').map(b => b.images))).filter(g => typeof dims[g.src] === 'number');
+    if (!isShort) src = src.slice(0, tail);
+    src = src.filter(b => b.type !== 'gallery');
+    let leadDone = false;
+    const blocks = src.map((b, i) => {
+      const t = b.type, lead = t === 'p' && !leadDone && (leadDone = true);
+      return { ...b, id: 'b-' + s.slug + '-' + i, isNote: t === 'note', isLead: lead, isP: t === 'p' && !lead, isH: t === 'h', isQuote: t === 'quote', isPull: t === 'pull', isList: t === 'list', isImg: t === 'img' && typeof dims[b.src] === 'number', isImgBad: t === 'img' && dims[b.src] === 'bad', ratio: typeof dims[b.src] === 'number' ? dims[b.src].toFixed(4) : '1.414', isEmbed: t === 'embed', embed: t === 'embed' ? this.embed(b.src) : '', caption: b.caption || '', alt: b.alt || 'story image' };
+    });
+    const idx = this.state.idx, at = idx.findIndex(p => p.slug === s.slug);
+    const link = p => p ? { title: p.title, href: this.href(p.slug) } : { title: 'All stories', href: 'Home.dc.html' };
+    const gc = d ? 6 : m ? 1 : 4;
+    const plan = d ? [[4,'1.618/1'],[2,'1/1.2'],[2,'1/1'],[2,'1/1'],[2,'1/1'],[3,'1.618/1'],[3,'1.618/1']] : m ? [[1,'1.2/1']] : [[4,'1.618/1'],[2,'1/1'],[2,'1/1']];
+    const periods = [['01','pre-contact','Pre-Contact'],['02','colonial','Colonial'],['03','wwii','WWII'],['04','contemporary','Contemporary']];
+    const on = (a, b) => a ? b : '';
+    return {
+      progress: (this.state.p * 100).toFixed(1) + '%',
+      story: { ...s, full: this.full(s.date), ago: this.ago(s.date), author: (s.author || '').toLowerCase().replace(/\b\w/g, c => c.toUpperCase()), dek: s.dek || '', image: s.image || '', imageAlt: s.imageAlt || 'lead image', timeline: s.timeline || [], shortMin: s.shortMin || 1 },
+      heroReady: !!(this.state.s && s.image && typeof dims[s.image] === 'number'),
+      heroRatio: typeof dims[s.image] === 'number' ? dims[s.image].toFixed(4) : '1.778',
+      catHref: 'Home.dc.html?cat=' + ({ 'Pre-Contact':'pre-contact', Colonial:'colonial', WWII:'wwii', Contemporary:'contemporary' }[s.period] || ''),
+      cm: this.state.cm, cmText: this.cmField('text'), cmName: this.cmField('name'), cmEmail: this.cmField('email'),
+      cmSubmit: (e) => this.postComment(e), cmThanks: this.state.cmThanks,
+      cmHas: this.state.comments.length > 0, cmCount: String(this.state.comments.length).padStart(2, '0'),
+      cmList: this.state.comments.map(c => ({ ...c, initial: (c.name[0] || '?'), ago: this.ago(c.date) })),
+      cmCols: m ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)', cmAlign: d ? 'flex-end' : 'flex-start',
+      blocks, hasShort, isShort, isFull: !isShort,
+      readLabel: (isShort ? s.shortMin : s.readMin) + ' min read',
+      setShort: () => this.setState({ mode: 'short' }), setFull: () => this.setState({ mode: 'full' }),
+      shortBg: on(isShort, '#5E3023') || 'transparent', shortFg: isShort ? '#F2EEE6' : '#5E3023',
+      fullBg: on(!isShort, '#5E3023') || 'transparent', fullFg: !isShort ? '#F2EEE6' : '#5E3023',
+      hasTimeline: !!(s.timeline && s.timeline.length), hasTags: !!(s.tags && s.tags.length),
+      hasGallery: galImgs.length > 0, galleryCount: galImgs.length + ' photographs',
+      gallery: galImgs.map((g, i) => { const [sp, a] = plan[i % plan.length]; return { id: 'gal-' + s.slug + '-' + i, ratio: dims[g.src].toFixed(4), src: g.src, cap: g.caption || g.alt || 'Archive photograph', num: String(i + 1).padStart(2, '0'), span: 'span ' + sp, aspect: a }; }),
+      galColsN: d ? 3 : m ? 1 : 2,
+      heroMaxH: d ? '85vh' : '70vh',
+      prev: link(at >= 0 ? idx[at + 1] : null), next: link(at > 0 ? idx[at - 1] : null),
+      related: idx.filter(p => p.period === s.period && p.slug !== s.slug).slice(0, 6).map(p => ({ ...p, href: this.href(p.slug), full: this.full(p.date), ago: this.ago(p.date), imageAlt: p.imageAlt || p.title })),
+      leadSize: m ? '21px' : '29px', bodySize: m ? '19px' : '21px',
+      headPad: (m ? '34px ' : '55px ') + pad + ' 34px',
+      tagaSize: TAGA + 'px', houseSize: Math.max(18, Math.round(TAGA * 0.17)) + 'px', housePad: Math.round(TAGA * 0.212) + 'px', glyphH: Math.round(TAGA * 1.15) + 'px',
+      nav: [['','home','']].concat(periods).map(([num, label, key]) => {
+        const act = key && key === s.period;
+        return { num, label, href: 'Home.dc.html' + (key ? '?cat=' + label : ''), bg: act ? '#C8372A' : 'transparent', fg: act ? '#F2EEE6' : '#5E3023', numC: act ? '#F2EEE6' : '#C8372A' };
+      }),
+      cols: d ? 'minmax(0,1fr) minmax(0,1.618fr)' : 'minmax(0,1fr)',
+      sideRule: d ? '4px solid #5E3023' : 'none',
+      sidePad: d ? '89px 55px 55px ' + pad : m ? '34px 21px 0' : '55px 34px 0',
+      sideJustify: d ? 'flex-end' : 'flex-start', dateAlign: d ? 'right' : 'left',
+      titlePad: d ? '89px ' + pad + ' 55px 55px' : m ? '34px 21px 55px' : '34px 34px 55px',
+      h1Size: d ? 'clamp(76px,7vw,123px)' : m ? '47px' : '76px',
+      dekSize: m ? '18px' : '29px',
+      heroAspect: m ? '1.2/1' : '2.618/1',
+      railRuleB: d ? 'none' : '4px solid #5E3023',
+      railPad: d ? '89px 55px 89px ' + pad : m ? '34px 21px' : '55px 34px',
+      railPos: d ? 'sticky' : 'static',
+      bodyPad: d ? '89px ' + pad + ' 89px 55px' : m ? '55px 21px' : '55px 34px',
+      quoteSize: m ? '47px' : '76px',
+      secPad: m ? '55px 21px' : d ? '89px ' + pad : '89px 34px',
+      h2Size: m ? '29px' : '47px',
+      pnCols: m ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)',
+      pnPad: m ? '34px 21px' : '55px ' + pad,
+      pnRule: m ? 'none' : '4px solid #5E3023', pnRuleB: m ? '4px solid #5E3023' : 'none',
+      relCols: d ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      relRow: m ? '89px minmax(0,1fr)' : '144px minmax(0,1fr)',
+      footPad: '34px ' + pad,
+      share: () => this.share(), shareLabel: this.state.copied ? 'copied' : 'share', tick: this.state.now,
+    };
+  }
+}
+</script>
+</body>
+</html>

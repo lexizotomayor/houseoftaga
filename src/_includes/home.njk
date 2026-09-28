@@ -1,0 +1,61 @@
+---
+layout: base.njk
+---
+{%- from "partials/card.njk" import card -%}
+{%- from "partials/share.njk" import share -%}
+{%- from "partials/ago.njk" import ago -%}
+{%- set isHome = page.url == "/" %}
+{%- if p %}
+  {%- set currentPeriod = p.key %}
+  {%- set list = stories | byPeriod(p.period) %}
+  {%- set listTitle = p.label %}
+  {%- set startNum = 1 %}
+{%- else %}
+  {%- set list = pagination.items %}
+  {%- set listTitle = "latest stories" if pagination.pageNumber == 0 else "older stories" %}
+  {%- set startNum = pagination.pageNumber * pagination.size + 1 %}
+{%- endif %}
+{% include "partials/masthead.njk" %}
+<main id="content">
+{%- if isHome %}
+{%- set f = stories | bySlug(site.featuredSlug) %}
+<section class="featured" aria-labelledby="featured-title">
+  <a class="pic" href="{{ f.url }}" aria-hidden="true" tabindex="-1">{% if f.lead %}<img src="{{ f.lead.src }}" alt="" width="{{ f.lead.width }}" height="{{ f.lead.height }}" fetchpriority="high">{% endif %}</a>
+  <div class="text">
+    <a class="cat" href="/{{ f.periodKey }}/">{{ f.period }}</a>
+    <div class="stack">
+      <div class="sec-head"><h2 id="featured-title">featured story</h2><span class="bar" aria-hidden="true"></span></div>
+      <a class="title" href="{{ f.url }}">{{ f.title }}</a>
+      <p class="excerpt">{{ f.dek or f.excerpt }}</p>
+      <div class="meta"><span>by {{ f.author }}</span>{{ ago(f.date) }}{{ share(f.title, f.url) }}</div>
+      <a class="label-link" href="{{ f.url }}"><span class="sq" aria-hidden="true"></span>read the story</a>
+    </div>
+  </div>
+</section>
+{%- endif %}
+<section class="latest" aria-labelledby="list-title">
+  <div class="sec-head">
+    <h2 id="list-title">{{ listTitle }}</h2>
+    <span class="bar" aria-hidden="true"></span>
+    {%- if p %}
+    <a class="all" href="/">all stories</a><span class="count">{{ list.length | pad2 }} stories</span>
+    {%- elif pagination.pageNumber > 0 %}
+    <span class="count">page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+    {%- endif %}
+  </div>
+  <div class="grid">
+    {%- for cell in list | gridPlan %}
+    {{ card(cell, startNum + loop.index0) }}
+    {%- endfor %}
+    {%- if not p and pagination.href.next %}
+    <a class="older-tile" href="{{ pagination.href.next }}"><span class="arrow" aria-hidden="true">→</span><span class="label">older<br>stories</span></a>
+    {%- endif %}
+  </div>
+  {%- if not p and pagination.pageNumber > 0 %}
+  <div class="pager">
+    <a class="label-link" href="{{ pagination.href.previous }}"><span class="sq" aria-hidden="true"></span>newer stories</a>
+  </div>
+  {%- endif %}
+</section>
+</main>
+{% include "partials/foot-home.njk" %}

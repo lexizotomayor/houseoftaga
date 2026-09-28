@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;-webkit-font-smoothing:antialiased}
+a{color:#5E3023;text-decoration:none}
+a:hover{color:#C8372A}
+*,*::before,*::after{box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}
+input::placeholder,textarea::placeholder{color:#5E3023;opacity:0.55}
+</style>
+</helmet>
+<div id="top" style="background:#F2EEE6;color:#5E3023;font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;line-height:1.618;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column">
+
+<header data-screen-label="Header" style="position:relative;border-bottom:4px solid #5E3023">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:34px;padding:{{ headPad }}">
+<a href="Home.dc.html" aria-label="House of Taga home" style="display:flex;align-items:flex-end;gap:8px;color:#5E3023">
+<span style="writing-mode:vertical-rl;transform:rotate(180deg);font-size:{{ houseSize }};font-weight:700;letter-spacing:-0.02em;line-height:1;position:relative;bottom:{{ housePad }};white-space:nowrap">house of</span>
+<span style="font-size:{{ tagaSize }};font-weight:800;letter-spacing:-0.06em;line-height:0.78;white-space:nowrap;padding-bottom:0.24em">taga</span>
+<img src="./assets/taga-glyph.png" alt="" aria-hidden="true" style="height:{{ glyphH }};width:auto;opacity:0.35;flex:none">
+</a>
+<nav style="display:flex;gap:0;align-items:stretch;font-size:18px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;line-height:1.2">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+<a href="{{ t.href }}" onClick="{{ t.go }}" style="display:flex;align-items:center;min-height:44px;padding:8px 13px;border-left:3px solid #5E3023;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</a>
+</sc-for>
+</nav>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding-bottom:34px"><span style="display:block;height:13px;background:#C8372A"></span><span style="display:block;height:13px;background:#C8372A"></span></div>
+</header>
+
+<main style="flex:1;display:grid;grid-template-columns:{{ cols }}">
+<div style="position:relative;border-right:{{ sideRule }};border-bottom:{{ sideRuleB }};padding:{{ sidePad }};display:flex;gap:21px;align-items:flex-start;justify-content:{{ sideJustify }}">
+<h1 style="margin:0;writing-mode:{{ titleMode }};transform:{{ titleRot }};font-size:{{ titleSize }};font-weight:800;letter-spacing:-0.03em;line-height:0.82;text-transform:lowercase;white-space:nowrap">{{ page.title }}</h1>
+<div style="display:flex;flex-direction:column;gap:13px;align-self:{{ numAlign }}"><span style="font-size:47px;font-weight:300;line-height:1;color:#C8372A">{{ page.num }}</span><span style="display:block;width:21px;height:89px;background:#C8372A"></span></div>
+</div>
+
+<div style="padding:{{ bodyPad }};min-width:0">
+
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ true }}">
+<article data-screen-label="About" style="display:flex;flex-direction:column;gap:55px;max-width:760px">
+<p style="margin:0;font-size:{{ leadSize }};font-weight:700;letter-spacing:-0.02em;line-height:1.2;text-wrap:pretty">An homage to Marianas history and culture — the story of Saipan, Tinian and Rota, told one piece at a time.</p>
+<div style="display:grid;grid-template-columns:{{ aboutCols }};gap:34px;align-items:start">
+<div style="position:relative;aspect-ratio:1/1.2;border:3px solid #5E3023"><image-slot id="about-portrait" shape="rect" placeholder="portrait of Lexi Zotomayor"></image-slot></div>
+<div style="display:flex;flex-direction:column;gap:21px">
+<span style="align-self:flex-start;font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:#C8372A;color:#F2EEE6;padding:8px 13px">the writer</span>
+<p style="margin:0;text-wrap:pretty">House of Taga is written by Lexi Zotomayor, a journalist who spent years reporting on Saipan — covering its courts, its pension fund, its archaeology and the people who keep its past alive.</p>
+<p style="margin:0;text-wrap:pretty">The name comes from the House of Taga on Tinian, the great latte stones said to have belonged to the chief Taga. Like those stones, these stories are meant to hold something up: a record of the islands, in their own words where possible.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:0">
+<span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding-bottom:13px;border-bottom:4px solid #5E3023">four periods</span>
+<sc-for list="{{ periods }}" as="p" hint-placeholder-count="4">
+<a href="Home.dc.html" style="display:grid;grid-template-columns:76px minmax(0,1fr);gap:21px;align-items:baseline;padding:21px 0;border-bottom:3px solid #5E3023">
+<span style="font-size:47px;font-weight:300;line-height:1;color:#C8372A">{{ p.num }}</span>
+<span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:29px;font-weight:800;letter-spacing:-0.01em;line-height:1.2">{{ p.name }}</span><span style="text-wrap:pretty">{{ p.note }}</span></span>
+</a>
+</sc-for>
+</div>
+</article>
+</sc-if>
+
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="Contact" style="display:grid;grid-template-columns:{{ contactCols }};gap:55px;align-items:start">
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:34px;min-width:0">
+<p style="margin:0;font-size:{{ leadSize }};font-weight:700;letter-spacing:-0.02em;line-height:1.2;text-wrap:pretty">A story tip, a correction, a family photograph — hafa adai, write in.</p>
+<fieldset style="border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px">
+<legend style="padding:0;margin-bottom:13px;font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">what is it about</legend>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ topics }}" as="t" hint-placeholder-count="4">
+<button type="button" onClick="{{ t.pick }}" style="min-height:44px;padding:8px 13px;border:3px solid #5E3023;background:{{ t.bg }};color:{{ t.fg }};font-size:18px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;line-height:1.2">{{ t.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+<div style="display:grid;grid-template-columns:{{ fieldCols }};gap:34px">
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">name</span><input required name="name" value="{{ form.name }}" onChange="{{ setName }}" placeholder="Your name" style="min-height:55px;padding:13px 0;border:none;border-bottom:3px solid #5E3023;background:transparent;font-size:18px;outline:none;border-radius:0" style-focus="border-bottom-color:#C8372A"></label>
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">email</span><input required type="email" name="email" value="{{ form.email }}" onChange="{{ setEmail }}" placeholder="you@example.com" style="min-height:55px;padding:13px 0;border:none;border-bottom:3px solid #5E3023;background:transparent;font-size:18px;outline:none;border-radius:0" style-focus="border-bottom-color:#C8372A"></label>
+</div>
+<label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">message</span><textarea required name="message" rows="7" value="{{ form.message }}" onChange="{{ setMessage }}" placeholder="Tell us what you know, or what you're looking for." style="padding:13px;border:3px solid #5E3023;background:transparent;font-size:18px;line-height:1.618;resize:vertical;outline:none;border-radius:0" style-focus="border-color:#C8372A"></textarea></label>
+<div style="display:flex;flex-wrap:wrap;gap:21px;align-items:center;justify-content:space-between">
+<span style="font-size:18px;max-width:28em;text-wrap:pretty">We only use your details to reply. See <a href="#privacy" onClick="{{ goPrivacy }}" style="font-weight:700;border-bottom:3px solid #C8372A">privacy</a>.</span>
+<button type="submit" style="display:flex;align-items:center;gap:21px;min-height:55px;padding:13px 34px;background:#C8372A;color:#F2EEE6;border:none;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer" style-hover="background:#5E3023">send<span style="font-size:29px;font-weight:300;line-height:1">→</span></button>
+</div>
+</form>
+</sc-if>
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:34px;align-items:flex-start;min-width:0">
+<span style="display:block;width:89px;height:89px;background:#C8372A"></span>
+<p style="margin:0;font-size:{{ leadSize }};font-weight:800;letter-spacing:-0.02em;line-height:1.2">Si Yu'os ma'åse', {{ firstName }}.</p>
+<p style="margin:0;max-width:30em;text-wrap:pretty">Your message is on its way. Expect a reply at {{ form.email }} within a few days.</p>
+<button type="button" onClick="{{ reset }}" style="display:flex;align-items:center;gap:13px;min-height:44px;padding:0;background:none;border:none;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer"><span style="display:block;width:3px;height:29px;background:#5E3023"></span>send another</button>
+</div>
+</sc-if>
+<aside style="display:flex;flex-direction:column;gap:0;border-top:4px solid #5E3023">
+<div style="display:flex;flex-direction:column;gap:4px;padding:21px 0;border-bottom:3px solid #5E3023"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#C8372A">email</span><a href="mailto:hafadai@houseoftaga.com" style="font-size:18px;font-weight:700;overflow-wrap:anywhere">hafadai@houseoftaga.com</a></div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:21px 0;border-bottom:3px solid #5E3023"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#C8372A">from</span><span>Saipan · Tinian · Rota</span></div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:21px 0;border-bottom:3px solid #5E3023"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#C8372A">corrections</span><span style="text-wrap:pretty">Name the story and the line. We fix errors and note the change.</span></div>
+</aside>
+</article>
+</sc-if>
+
+<sc-if value="{{ isPrivacy }}" hint-placeholder-val="{{ false }}">
+<article data-screen-label="Privacy" style="display:flex;flex-direction:column;gap:34px;max-width:760px">
+<div style="display:flex;flex-wrap:wrap;gap:13px 21px;align-items:center"><span style="font-size:18px;font-weight:800;letter-spacing:0.14em;line-height:1;text-transform:uppercase;background:#C8372A;color:#F2EEE6;padding:8px 13px">updated</span><span style="font-weight:700">September 2026</span></div>
+<p style="margin:0;font-size:{{ leadSize }};font-weight:700;letter-spacing:-0.02em;line-height:1.2;text-wrap:pretty">House of Taga is a reading site. We collect as little as we can.</p>
+<div style="display:flex;flex-direction:column;border-top:4px solid #5E3023">
+<sc-for list="{{ policy }}" as="s" hint-placeholder-count="6">
+<section style="display:grid;grid-template-columns:{{ polCols }};gap:13px 21px;padding:34px 0;border-bottom:3px solid #5E3023">
+<span style="font-size:47px;font-weight:300;line-height:1;color:#C8372A">{{ s.num }}</span>
+<div style="display:flex;flex-direction:column;gap:13px;min-width:0">
+<h2 style="margin:0;font-size:29px;font-weight:800;letter-spacing:-0.01em;line-height:1.2">{{ s.head }}</h2>
+<p style="margin:0;text-wrap:pretty">{{ s.body }}</p>
+</div>
+</section>
+</sc-for>
+</div>
+<p style="margin:0;text-wrap:pretty">Questions: <a href="mailto:hafadai@houseoftaga.com" style="font-weight:700;border-bottom:3px solid #C8372A">hafadai@houseoftaga.com</a></p>
+</article>
+</sc-if>
+
+</div>
+</main>
+
+<footer style="border-top:4px solid #5E3023;display:flex;flex-direction:column">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:21px;padding:{{ footPad }}">
+<a href="Home.dc.html" style="display:flex;align-items:center;gap:13px;font-size:18px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;min-height:44px"><span style="font-size:29px;font-weight:300;line-height:1;color:#C8372A">←</span>all stories</a>
+<span style="font-size:18px">© 2018 House of Taga / Alexie Zotomayor</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding-bottom:8px"><span style="display:block;height:13px;background:#C8372A"></span><span style="display:block;height:13px;background:#C8372A"></span></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, page: this.hashPage(), topic: 'story tip', sent: false, form: { name: '', email: '', message: '' } };
+  hashPage() { const h = (typeof location !== 'undefined' ? location.hash : '').slice(1); return ['about','contact','privacy'].includes(h) ? h : 'about'; }
+  componentDidMount() {
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onHash = () => this.setState({ page: this.hashPage() });
+    window.addEventListener('resize', this.onResize); window.addEventListener('hashchange', this.onHash);
+    this.onResize();
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); window.removeEventListener('hashchange', this.onHash); }
+  go(p) { return (e) => { e && e.preventDefault(); history.replaceState(null, '', '#' + p); this.setState({ page: p }); window.scrollTo(0, 0); }; }
+  field(k) { return (e) => { const v = e.target.value; this.setState(s => ({ form: { ...s.form, [k]: v } })); }; }
+  renderVals() {
+    const w = this.state.w, bp = w >= 1024 ? 'd' : w >= 640 ? 't' : 'm';
+    const d = bp === 'd', m = bp === 'm', page = this.state.page;
+    const TAGA = m ? 76 : d ? 123 : 99;
+    const pages = { about: { title: 'about', num: '01' }, contact: { title: 'contact', num: '02' }, privacy: { title: 'privacy', num: '03' } };
+    const pad = m ? '21px' : d ? 'clamp(34px,4.5vw,89px)' : '34px';
+    return {
+      headPad: (m ? '34px ' : '55px ') + pad + ' 34px',
+      tagaSize: TAGA + 'px', houseSize: Math.max(18, Math.round(TAGA * 0.17)) + 'px', housePad: Math.round(TAGA * 0.212) + 'px', glyphH: Math.round(TAGA * 1.15) + 'px',
+      tabs: [['home','Home.dc.html',null], ['about','#about','about'], ['contact','#contact','contact'], ['privacy','#privacy','privacy']].map(([label, href, p]) => ({
+        label, href, go: p ? this.go(p) : undefined, bg: p === page ? '#C8372A' : 'transparent', fg: p === page ? '#F2EEE6' : '#5E3023' })),
+      page: pages[page], isAbout: page === 'about', isContact: page === 'contact', isPrivacy: page === 'privacy',
+      cols: d ? 'minmax(0,1fr) minmax(0,1.618fr)' : 'minmax(0,1fr)',
+      sideRule: d ? '4px solid #5E3023' : 'none', sideRuleB: d ? 'none' : '4px solid #5E3023',
+      sidePad: d ? '89px ' + pad : m ? '34px 21px' : '55px 34px',
+      sideJustify: d ? 'flex-end' : 'space-between',
+      titleMode: d ? 'vertical-rl' : 'horizontal-tb', titleRot: d ? 'rotate(180deg)' : 'none',
+      titleSize: d ? 'clamp(199px,17vw,280px)' : m ? '76px' : '123px',
+      numAlign: d ? 'flex-end' : 'flex-end',
+      bodyPad: d ? '89px ' + pad + ' 89px 55px' : m ? '55px 21px' : '55px 34px',
+      leadSize: m ? '29px' : '47px',
+      aboutCols: m ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1.618fr)',
+      contactCols: w >= 1280 ? 'minmax(0,1.618fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      fieldCols: m ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)',
+      polCols: m ? 'minmax(0,1fr)' : '76px minmax(0,1fr)',
+      footPad: '34px ' + pad,
+      periods: [
+        ['01','Pre-contact period','Ancient Chamorro settlement, latte stones, and the first voyages into the Marianas.'],
+        ['02','Colonial period','Spanish, German and Japanese rule, from the galleons to the sugar fields.'],
+        ['03','WWII','The battles of Saipan and Tinian, and what the war left behind.'],
+        ['04','Contemporary period','The Commonwealth years: politics, economy, heritage and people.'],
+      ].map(([num, name, note]) => ({ num, name, note })),
+      topics: ['story tip','correction','photos & archives','say hafa adai'].map(t => ({ label: t, pick: () => this.setState({ topic: t }), bg: this.state.topic === t ? '#5E3023' : 'transparent', fg: this.state.topic === t ? '#F2EEE6' : '#5E3023' })),
+      form: this.state.form,
+      setName: this.field('name'), setEmail: this.field('email'), setMessage: this.field('message'),
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); window.scrollTo(0, 0); },
+      reset: () => this.setState({ sent: false, form: { name: '', email: this.state.form.email, message: '' } }),
+      sent: this.state.sent, notSent: !this.state.sent,
+      firstName: (this.state.form.name.trim().split(/\s+/)[0]) || 'friend',
+      goPrivacy: this.go('privacy'),
+      policy: [
+        ['01','What we collect','Nothing, unless you write to us. If you use the contact form or email, we keep your name, email address and message so we can reply.'],
+        ['02','Analytics','We count visits in aggregate to understand which stories are read. This data is not tied to your name or used to profile you.'],
+        ['03','Cookies','The site uses only the cookies it needs to work and to measure visits. You can block them in your browser; every story stays readable.'],
+        ['04','Sharing','We do not sell or rent your information. When you use a share button, the service you share to handles your data under its own policy.'],
+        ['05','Keeping and deleting','Messages are kept only as long as a conversation needs. Email us and we will delete what we hold about you.'],
+        ['06','Changes','If this policy changes, the date above changes with it.'],
+      ].map(([num, head, body]) => ({ num, head, body })),
+    };
+  }
+}
+</script>
+</body>
+</html>

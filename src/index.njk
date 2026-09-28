@@ -1,0 +1,10 @@
+---
+# Home: featured story plus the latest ten; older stories page on at /page/2/ …
+pagination:
+  data: latest
+  size: 10
+permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+layout: home.njk
+eleventyComputed:
+  title: "{% if pagination.pageNumber > 0 %}Older stories, page {{ pagination.pageNumber + 1 }}{% endif %}"
+---

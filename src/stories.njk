@@ -1,0 +1,13 @@
+---
+# One page per story → /stories/<slug>/
+pagination:
+  data: stories
+  size: 1
+  alias: story
+permalink: "/stories/{{ story.slug }}/"
+layout: story.njk
+eleventyComputed:
+  title: "{{ story.title | safe }}"
+  description: "{{ (story.dek or story.excerpt) | safe }}"
+  ogImage: "{{ story.lead.src if story.lead }}"
+---

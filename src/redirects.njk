@@ -1,0 +1,15 @@
+---
+# Keeps old WordPress URLs working (see README → Redirects).
+permalink: /_redirects
+eleventyExcludeFromCollections: true
+---
+{%- for s in stories %}
+/{{ s.slug }}/  /stories/{{ s.slug }}/  301
+/{{ s.slug }}  /stories/{{ s.slug }}/  301
+{%- endfor %}
+{%- for p in periods %}
+/category/{{ p.wp }}/*  /{{ p.key }}/  301
+/category/{{ p.wp }}  /{{ p.key }}/  301
+{%- endfor %}
+/category/*  /  301
+/page/1/  /  301

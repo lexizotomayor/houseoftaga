@@ -1,0 +1,25 @@
+{%- from "partials/wordmark.njk" import wordmark -%}
+<footer class="foot">
+  <div class="foot-art">
+    <img class="engraving" src="/assets/taga-engraving.webp" alt="" aria-hidden="true" loading="lazy" width="1276" height="816">
+    <span class="name vtext" aria-hidden="true">house of taga</span>
+    <div class="words">
+      <span class="redbar" aria-hidden="true"></span>
+      <p>An homage to Chamorro culture: the history of the Marianas, told one story at a time.</p>
+      <a class="label-link" href="#top"><span class="tick" aria-hidden="true"></span>back to top</a>
+    </div>
+  </div>
+  <div class="foot-mark" aria-hidden="true">{{ wordmark(glyph=false) }}</div>
+  <div class="foot-links">
+    <div class="row">
+      <nav aria-label="Site">
+        <a href="/about/">about</a>
+        <a href="/contact/">contact</a>
+        <a href="/privacy/">privacy</a>
+      </nav>
+      <span class="copy">{{ site.copyright }}</span>
+    </div>
+    {% include "partials/emblem.njk" %}
+  </div>
+</footer>
+{% set barsClass = "bars--end" %}{% include "partials/bars.njk" %}

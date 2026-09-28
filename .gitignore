@@ -1,0 +1,10 @@
+node_modules/
+_site/
+.cache/
+.DS_Store
+# Source material kept on this machine only
+IMG/
+_handoff/
+*.zip
+*.xml
+.claude/

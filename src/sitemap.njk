@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.url }}/</loc></url>
+{%- for p in periods %}
+  <url><loc>{{ site.url }}/{{ p.key }}/</loc></url>
+{%- endfor %}
+{%- for item in collections.all %}{% if not item.data.pagination %}
+  <url><loc>{{ site.url }}{{ item.url }}</loc></url>
+{%- endif %}{% endfor %}
+{%- for s in stories %}
+  <url><loc>{{ site.url }}{{ s.url }}</loc><lastmod>{{ s.date | isoDate }}</lastmod></url>
+{%- endfor %}
+</urlset>

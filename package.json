@@ -1,0 +1,19 @@
+{
+  "name": "houseoftaga",
+  "version": "1.0.0",
+  "private": true,
+  "description": "House of Taga — an homage to Chamorro culture. Eleventy site for Netlify.",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "images": "node scripts/import-images.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "sharp": "^0.34.0"
+  }
+}

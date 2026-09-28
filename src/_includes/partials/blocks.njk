@@ -1,0 +1,30 @@
+{#- Renders a story's blocks (see README → Story data). -#}
+{% macro blocks(list) %}
+{%- for b in list %}
+{%- if b.type == "p" %}
+<p{% if b.lead %} class="lead"{% endif %}>{{ b.text }}</p>
+{%- elif b.type == "h" %}
+<h2>{{ b.text }}</h2>
+{%- elif b.type == "note" %}
+<div class="note"><p>{{ b.text }}</p></div>
+{%- elif b.type == "quote" %}
+<blockquote class="quote">{{ b.text }}</blockquote>
+{%- elif b.type == "pull" %}
+<blockquote class="pull"><p>{{ b.text }}</p>{% if b.cite %}<cite>{{ b.cite }}</cite>{% endif %}</blockquote>
+{%- elif b.type == "list" %}
+{%- set tag = "ol" if b.ordered else "ul" %}
+<{{ tag }}>{% for li in b.items %}<li><span>{{ li }}</span></li>{% endfor %}</{{ tag }}>
+{%- elif b.type == "img" %}
+{%- if b.img %}
+<figure>
+  <div class="frame"><img src="{{ b.img.src }}" alt="{{ b.alt }}" width="{{ b.img.width }}" height="{{ b.img.height }}" loading="lazy" decoding="async"></div>
+  {%- if b.caption %}<figcaption>{{ b.caption }}</figcaption>{% endif %}
+</figure>
+{%- elif b.alt or b.caption %}
+<figure><div class="img-missing">{{ b.alt or b.caption }}</div></figure>
+{%- endif %}
+{%- elif b.type == "embed" %}
+<figure class="embed"><iframe src="{{ b.src | youtubeEmbed }}" title="Video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure>
+{%- endif %}
+{%- endfor %}
+{% endmacro %}

@@ -1,0 +1,8 @@
+{#- The lowercase "house of taga" mark. `tag` sets the element for "taga" (h1 on the home page). -#}
+{% macro wordmark(tag="span", link=false, glyph=true) %}
+{%- if link %}<a class="wordmark" href="/" aria-label="House of Taga home">{% else %}<div class="wordmark">{% endif -%}
+<span class="house">house of</span>
+<{{ tag }} class="taga">taga</{{ tag }}>
+{%- if glyph %}<img class="glyph" src="/assets/taga-glyph.png" alt="" aria-hidden="true" width="228" height="260">{% endif -%}
+{%- if link %}</a>{% else %}</div>{% endif %}
+{% endmacro %}

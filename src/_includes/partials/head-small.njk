@@ -1,0 +1,13 @@
+{%- from "partials/wordmark.njk" import wordmark -%}
+{#- Story and page header. `tabs` is a list of {label, url, num?, current?}. -#}
+<header class="head">
+  <div class="row">
+    {{ wordmark(link=true) }}
+    <nav class="tabs" aria-label="Sections">
+      {%- for t in tabs %}
+      <a href="{{ t.url }}"{% if t.current %} aria-current="page"{% endif %}>{% if t.num %}<span class="num">{{ t.num }}</span>{% endif %}{{ t.label }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+  {% include "partials/bars.njk" %}
+</header>
