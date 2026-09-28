@@ -95,7 +95,7 @@ ogType: article
 </section>
 {%- endif %}
 
-{%- set cms = (comments[s.slug] or []) | sort(true, false, "date") %}
+{%- set cms = s.comments %}
 <section class="split comments" id="comments" aria-labelledby="comments-title">
   <div class="side">
     <div class="tally"><h2 id="comments-title">comments</h2><span>{{ cms.length | pad2 }}</span></div>

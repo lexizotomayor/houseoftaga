@@ -1,6 +1,6 @@
 {#- Netlify Forms: one form for all stories; the story slug travels in a hidden field.
-    Submissions arrive in Netlify → Forms → "comments". Approve one by adding it to
-    src/_data/comments/<slug>.json (see the README there) and pushing. -#}
+    Submissions arrive in Netlify → Forms → "comments". Approve one by adding it to the
+    story's Comments list in the CMS (/admin/). -#}
 <form class="form" name="comments" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/?from={{ story.slug }}" data-ajax>
   <input type="hidden" name="form-name" value="comments">
   <input type="hidden" name="story" value="{{ story.slug }}">

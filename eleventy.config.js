@@ -1,5 +1,8 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // The CMS (Decap) is a static app: copy it as is.
+  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.ignores.add("src/admin/**");
   eleventyConfig.addWatchTarget("src/assets/");
 
   const tz = "Pacific/Saipan";

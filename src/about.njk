@@ -6,15 +6,16 @@ pageNum: "01"
 permalink: /about/
 description: House of Taga is written by Lexi Zotomayor — the history of Saipan, Tinian and Rota, told one piece at a time.
 ---
-{#- ⚠ Draft copy from the design handoff: the site owner must confirm it. Portrait: add src/assets/portrait.jpg and set `portrait` in site.js. -#}
+{#- Text and portrait are edited in the CMS (Pages → About), stored in src/_data/about.json. -#}
 <article class="about">
-  <p class="page-lead">An homage to Marianas history and culture — the story of Saipan, Tinian and Rota, told one piece at a time.</p>
+  <p class="page-lead">{{ about.lead }}</p>
   <div class="writer">
-    <div class="portrait">{% if site.portrait %}<img src="{{ site.portrait }}" alt="Lexi Zotomayor" width="600" height="720">{% else %}<span aria-hidden="true">portrait</span>{% endif %}</div>
+    <div class="portrait">{% if about.portrait %}<img src="{{ about.portrait }}" alt="{{ about.portraitAlt }}" width="600" height="720">{% else %}<span aria-hidden="true">portrait</span>{% endif %}</div>
     <div class="bio">
       <span class="cat cat--flat" style="align-self:flex-start">the writer</span>
-      <p>House of Taga is written by Lexi Zotomayor, a journalist who spent years reporting on Saipan — covering its courts, its pension fund, its archaeology and the people who keep its past alive.</p>
-      <p>The name comes from the House of Taga on Tinian, the great latte stones said to have belonged to the chief Taga. Like those stones, these stories are meant to hold something up: a record of the islands, in their own words where possible.</p>
+      {%- for para in about.bio %}
+      <p>{{ para }}</p>
+      {%- endfor %}
     </div>
   </div>
   <div class="list-rows">

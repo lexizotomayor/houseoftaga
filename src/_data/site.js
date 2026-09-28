@@ -5,5 +5,4 @@ export default {
   url: "https://houseoftaga.com",
   email: "hafadai@houseoftaga.com",
   copyright: "© 2018 House of Taga / Alexie Zotomayor",
-  featuredSlug: "the-battle-of-saipan-tinian",
 };

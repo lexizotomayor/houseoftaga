@@ -1,0 +1,12 @@
+{
+  "updated": "September 2026",
+  "lead": "House of Taga is a reading site. We collect as little as we can.",
+  "sections": [
+    { "heading": "What we collect", "body": "Nothing, unless you write to us. If you use the contact form, post a comment or email us, we keep your name, email address and message so we can reply or publish your comment. Your email is never shown." },
+    { "heading": "Analytics", "body": "We count visits in aggregate to understand which stories are read. This data is not tied to your name or used to profile you." },
+    { "heading": "Cookies", "body": "The site uses only the cookies it needs to work and to measure visits. You can block them in your browser; every story stays readable." },
+    { "heading": "Sharing", "body": "We do not sell or rent your information. When you use a share button, the service you share to handles your data under its own policy." },
+    { "heading": "Keeping and deleting", "body": "Messages are kept only as long as a conversation needs. Email us and we will delete what we hold about you, including a published comment." },
+    { "heading": "Changes", "body": "If this policy changes, the date above changes with it." }
+  ]
+}

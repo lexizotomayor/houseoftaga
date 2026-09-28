@@ -23,6 +23,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
+<script>
+  /* Netlify Identity emails (invite, password reset, confirmation) link here
+     with a token. Load the Identity widget only then, so it can show the
+     "set password" form, and go to the editor once logged in. */
+  if (/(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var s = document.createElement("script");
+      s.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+      s.onload = function () {
+        window.netlifyIdentity.on("login", function () { location.href = "/admin/"; });
+      };
+      document.head.appendChild(s);
+    });
+  }
+</script>
 <script src="/assets/js/site.js" defer></script>
 </head>
 <body id="top">

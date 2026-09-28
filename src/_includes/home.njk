@@ -18,7 +18,7 @@ layout: base.njk
 {% include "partials/masthead.njk" %}
 <main id="content">
 {%- if isHome %}
-{%- set f = stories | bySlug(site.featuredSlug) %}
+{%- set f = stories | bySlug(settings.featured) or stories[0] %}
 <section class="featured" aria-labelledby="featured-title">
   <a class="pic" href="{{ f.url }}" aria-hidden="true" tabindex="-1">{% if f.lead %}<img src="{{ f.lead.src }}" alt="" width="{{ f.lead.width }}" height="{{ f.lead.height }}" fetchpriority="high">{% endif %}</a>
   <div class="text">

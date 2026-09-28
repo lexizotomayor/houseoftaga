@@ -5,21 +5,14 @@ pageName: privacy
 pageNum: "03"
 permalink: /privacy/
 description: House of Taga is a reading site. We collect as little as we can.
-policy:
-  - ["What we collect", "Nothing, unless you write to us. If you use the contact form, post a comment or email us, we keep your name, email address and message so we can reply or publish your comment. Your email is never shown."]
-  - ["Analytics", "We count visits in aggregate to understand which stories are read. This data is not tied to your name or used to profile you."]
-  - ["Cookies", "The site uses only the cookies it needs to work and to measure visits. You can block them in your browser; every story stays readable."]
-  - ["Sharing", "We do not sell or rent your information. When you use a share button, the service you share to handles your data under its own policy."]
-  - ["Keeping and deleting", "Messages are kept only as long as a conversation needs. Email us and we will delete what we hold about you, including a published comment."]
-  - ["Changes", "If this policy changes, the date above changes with it."]
 ---
-{#- ⚠ Draft copy from the design handoff; not legal advice. The owner must approve it. -#}
+{#- Edited in the CMS (Pages → Privacy), stored in src/_data/privacy.json. Draft copy; not legal advice. -#}
 <article class="privacy">
-  <div class="updated"><span class="cat cat--flat">updated</span><span>September 2026</span></div>
-  <p class="page-lead">House of Taga is a reading site. We collect as little as we can.</p>
+  <div class="updated"><span class="cat cat--flat">updated</span><span>{{ privacy.updated }}</span></div>
+  <p class="page-lead">{{ privacy.lead }}</p>
   <div class="policy">
-    {%- for item in policy %}
-    <section><span class="big-n" aria-hidden="true">{{ loop.index | pad2 }}</span><div><h2>{{ item[0] }}</h2><p>{{ item[1] }}</p></div></section>
+    {%- for item in privacy.sections %}
+    <section><span class="big-n" aria-hidden="true">{{ loop.index | pad2 }}</span><div><h2>{{ item.heading }}</h2><p>{{ item.body }}</p></div></section>
     {%- endfor %}
   </div>
   <p>Questions: <a class="u-red" href="mailto:{{ site.email }}">{{ site.email }}</a></p>
