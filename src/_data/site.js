@@ -1,7 +1,7 @@
 export default {
   title: "House of Taga",
-  tagline: "An homage to Chamorro culture",
-  description: "An homage to Chamorro culture: the history of the Marianas — Saipan, Tinian and Rota — told one story at a time.",
+  tagline: "Field notes on history, memory, and life in the Marianas",
+  description: "Field notes on history, memory, and life in the Marianas — Saipan, Tinian and Rota — told one story at a time.",
   url: "https://houseoftaga.com",
   email: "hafadai@houseoftaga.com",
   copyright: "© 2018 House of Taga / Alexie Zotomayor",

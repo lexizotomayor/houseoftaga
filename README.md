@@ -1,4 +1,4 @@
-# House of Taga — an homage to Chamorro culture
+# House of Taga — field notes on history, memory, and life in the Marianas
 
 The history of the Northern Mariana Islands (Saipan, Tinian and Rota), told one story at a time. By Alexie Zotomayor.
 
