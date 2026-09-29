@@ -10,5 +10,58 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.6.0/dist/decap-cms.js"></script>
+  <script>
+    // Buttons for the one-box Story editor (the + menu). Each writes a line of text
+    // that lib/story-text.js turns into a photo, video, pull quote or editor's note.
+    const oneLine = (s) => String(s || "").replace(/\s*\n\s*/g, " ").trim();
+    const quoted = (s) => oneLine(s).replace(/"/g, '\\"');
+
+    CMS.registerEditorComponent({
+      id: "photo",
+      label: "Photo",
+      fields: [
+        { name: "src", label: "Photo", widget: "image", choose_url: false },
+        { name: "alt", label: "Description (for screen readers)", widget: "string", required: false },
+        { name: "caption", label: "Caption", widget: "text", required: false },
+      ],
+      pattern: /^!\[((?:\\.|[^\]])*)\]\((\S+?)(?:\s+"((?:\\.|[^"])*)")?\)$/,
+      fromBlock: (m) => ({ alt: (m[1] || "").replace(/\\(.)/g, "$1"), src: m[2], caption: (m[3] || "").replace(/\\"/g, '"') }),
+      toBlock: (d) => `![${oneLine(d.alt).replace(/([\[\]])/g, "\\$1")}](${d.src || ""}${d.caption ? ` "${quoted(d.caption)}"` : ""})`,
+      toPreview: (d) => `<img src="${d.src || ""}" alt="${d.alt || ""}">`,
+    });
+
+    CMS.registerEditorComponent({
+      id: "youtube",
+      label: "YouTube video",
+      fields: [{ name: "src", label: "YouTube link", widget: "string", hint: "e.g. https://www.youtube.com/watch?v=…" }],
+      pattern: /^\{\{< youtube "?([^\s"]+)"? >\}\}$/,
+      fromBlock: (m) => ({ src: m[1] }),
+      toBlock: (d) => `{{< youtube ${oneLine(d.src)} >}}`,
+      toPreview: (d) => `<p>YouTube: ${d.src || ""}</p>`,
+    });
+
+    CMS.registerEditorComponent({
+      id: "pull",
+      label: "Pull quote",
+      fields: [
+        { name: "text", label: "Quote", widget: "text" },
+        { name: "cite", label: "Who said it", widget: "string", required: false },
+      ],
+      pattern: /^\{\{< pull(?: cite="((?:\\.|[^"])*)")? >\}\}([\s\S]*?)\{\{< \/pull >\}\}$/,
+      fromBlock: (m) => ({ cite: (m[1] || "").replace(/\\"/g, '"'), text: m[2] }),
+      toBlock: (d) => `{{< pull${d.cite ? ` cite="${quoted(d.cite)}"` : ""} >}}${oneLine(d.text)}{{< /pull >}}`,
+      toPreview: (d) => `<blockquote>${d.text || ""}</blockquote>`,
+    });
+
+    CMS.registerEditorComponent({
+      id: "note",
+      label: "Editor's note",
+      fields: [{ name: "text", label: "Note", widget: "text" }],
+      pattern: /^\{\{< note >\}\}([\s\S]*?)\{\{< \/note >\}\}$/,
+      fromBlock: (m) => ({ text: m[1] }),
+      toBlock: (d) => `{{< note >}}${oneLine(d.text)}{{< /note >}}`,
+      toPreview: (d) => `<p><em>${d.text || ""}</em></p>`,
+    });
+  </script>
 </body>
 </html>

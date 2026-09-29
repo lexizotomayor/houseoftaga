@@ -2,18 +2,18 @@
 {% macro blocks(list) %}
 {%- for b in list %}
 {%- if b.type == "p" %}
-<p{% if b.lead %} class="lead"{% endif %}>{{ b.text }}</p>
+<p{% if b.lead %} class="lead"{% endif %}>{{ b.html | safe if b.html else b.text }}</p>
 {%- elif b.type == "h" %}
-<h2>{{ b.text }}</h2>
+<h2>{{ b.html | safe if b.html else b.text }}</h2>
 {%- elif b.type == "note" %}
-<div class="note"><p>{{ b.text }}</p></div>
+<div class="note"><p>{{ b.html | safe if b.html else b.text }}</p></div>
 {%- elif b.type == "quote" %}
-<blockquote class="quote">{{ b.text }}</blockquote>
+<blockquote class="quote">{{ b.html | safe if b.html else b.text }}</blockquote>
 {%- elif b.type == "pull" %}
-<blockquote class="pull"><p>{{ b.text }}</p>{% if b.cite %}<cite>{{ b.cite }}</cite>{% endif %}</blockquote>
+<blockquote class="pull"><p>{{ b.html | safe if b.html else b.text }}</p>{% if b.cite %}<cite>{{ b.cite }}</cite>{% endif %}</blockquote>
 {%- elif b.type == "list" %}
 {%- set tag = "ol" if b.ordered else "ul" %}
-<{{ tag }}>{% for li in b.items %}<li><span>{{ li }}</span></li>{% endfor %}</{{ tag }}>
+<{{ tag }}>{% for li in b.items %}<li><span>{{ b.itemsHtml[loop.index0] | safe if b.itemsHtml else li }}</span></li>{% endfor %}</{{ tag }}>
 {%- elif b.type == "img" %}
 {%- if b.img %}
 <figure>

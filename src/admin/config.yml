@@ -126,18 +126,35 @@ collections:
       - { label: "Excerpt", name: excerpt, widget: text, required: false, hint: "For search engines and sharing. Taken from the first paragraph if left empty." }
       - { label: Tags, name: tags, widget: list, required: false, allow_add: true }
       - label: Story
+        name: bodyText
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list]
+        editor_components: [photo, youtube, pull, note]
+        hint: "Paste the whole story here. A blank line starts a new paragraph. Use the + button (or the toolbar) to add a photo, YouTube video, pull quote or editor's note wherever you want it. Photos placed at the very end appear under “From the archive”."
+      - label: "Story, block by block (older stories)"
         name: blocks
         widget: list
+        required: false
+        collapsed: true
         types: *blocks
         typeKey: type
+        hint: "Stories imported from WordPress are stored here. Leave it empty for new stories. If the Story box above has text, it is used instead of this."
       - { label: "Reading time, minutes", name: readMin, widget: number, value_type: int, min: 1, required: false, hint: "Worked out from the length if left empty." }
-      - label: "Short version (optional)"
+      - label: "Short version"
+        name: shortText
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list]
+        editor_components: [photo, youtube, pull, note]
+        hint: "A plain-style rewrite, about 40% of the length. Paste it in one go. When there is one, readers get a Short / Full toggle."
+      - label: "Short version, block by block (older stories)"
         name: short
         widget: list
         required: false
+        collapsed: true
         types: *blocks
         typeKey: type
-        hint: "A plain-style rewrite, about 40% of the length. When there is one, readers get a Short / Full toggle."
       - { label: "Short version reading time, minutes", name: shortMin, widget: number, value_type: int, min: 1, required: false }
       - { label: "Timeline title", name: timelineTitle, widget: string, required: false, hint: "e.g. Operation Forager" }
       - label: Timeline
@@ -152,6 +169,7 @@ collections:
         name: comments
         widget: list
         required: false
+        default: []
         hint: "Approved comments. Copy them from Netlify → Forms → comments."
         summary: "{{fields.name}}: {{fields.text}}"
         fields:
