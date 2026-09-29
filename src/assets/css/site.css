@@ -490,7 +490,9 @@ a[aria-current="page"] .num { color: var(--paper); }
 .list-rows .big-n { font-size: 47px; font-weight: 300; line-height: 1; color: var(--red); }
 .list-rows .txt { display: flex; flex-direction: column; gap: 4px; }
 .list-rows .txt b { font-size: 29px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; }
-@media (min-width: 640px) { .about .writer { grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr); } }
+@media (min-width: 640px) { .about .writer:not(.writer--solo) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.618fr); } }
+.about .list-rows .kicker { margin: 0; }
+.about-closing { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.4; border-left: 8px solid var(--red); padding-left: 21px; }
 
 .contact { display: grid; grid-template-columns: minmax(0, 1fr); gap: 55px; align-items: start; }
 @media (min-width: 1280px) { .contact { grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr); } }

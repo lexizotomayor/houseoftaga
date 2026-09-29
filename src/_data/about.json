@@ -1,9 +1,29 @@
 {
-  "lead": "Dispatches, history, and cultural reflections from the Northern Mariana Islands.",
+  "lead": "About House of Taga",
+  "intro": [
+    "In the Northern Mariana Islands, the past sits out in the weather. It is carved into limestone latte pillars, rested along island reefs, and carried through generations of conversation across Saipan, Tinian, and Rota.",
+    "House of Taga is a reporter’s notebook written off deadline. It is a space for the stories that warrant a second, deeper look after the daily news cycle moves on."
+  ],
+  "findHeading": "What You’ll Find Here",
+  "find": [
+    {
+      "title": "Ancient Ground & Heritage",
+      "text": "Notes on archaeology, ancient navigation, and the early history of Chamorro and Refaluwasch culture."
+    },
+    {
+      "title": "Colonial Layers & Memory",
+      "text": "Stories, archival records, and figures from the Spanish, German, and Japanese eras."
+    },
+    {
+      "title": "Footprints of War",
+      "text": "The lingering human and physical impact of World War II across the archipelago."
+    },
+    {
+      "title": "Island Dispatches",
+      "text": "Essays, background context, and observations on local life and civic history in the CNMI."
+    }
+  ],
+  "closing": "My goal here is simple: to document these island stories with care, keep a clear record of what took place, and preserve details that might otherwise slip away.",
   "portrait": "",
-  "portraitAlt": "Lexi Zotomayor",
-  "bio": [
-    "House of Taga is written by Lexi Zotomayor, a journalist who spent years reporting on Saipan — covering its courts, its pension fund, its archaeology and the people who keep its past alive.",
-    "The name comes from the House of Taga on Tinian, the great latte stones said to have belonged to the chief Taga. Like those stones, these stories are meant to hold something up: a record of the islands, in their own words where possible."
-  ]
+  "portraitAlt": "Lexi Zotomayor"
 }
