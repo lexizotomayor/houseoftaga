@@ -86,6 +86,7 @@ export default async function () {
       url: `/stories/${s.slug}/`,
       period: p.period,
       periodKey: p.key,
+      periodName: p.name,
       periodNum: p.num,
       author: titleCase(s.author || "House of Taga Desk"),
       excerpt: s.excerpt || excerptOf(blocks),
@@ -107,7 +108,7 @@ export default async function () {
     s.older = link(stories[i + 1]);
     s.newer = link(stories[i - 1]);
     s.related = stories.filter((x) => x.period === s.period && x !== s).slice(0, 6)
-      .map(({ slug, title, url, period, periodKey, date, lead }) => ({ slug, title, url, period, periodKey, date, lead }));
+      .map(({ slug, title, url, period, periodKey, periodName, date, lead }) => ({ slug, title, url, period, periodKey, periodName, date, lead }));
   });
   return stories;
 }

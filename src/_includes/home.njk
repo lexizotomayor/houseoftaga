@@ -22,7 +22,7 @@ layout: base.njk
 <section class="featured" aria-labelledby="featured-title">
   <a class="pic" href="{{ f.url }}" aria-hidden="true" tabindex="-1">{% if f.lead %}<img src="{{ f.lead.src }}" alt="" width="{{ f.lead.width }}" height="{{ f.lead.height }}" fetchpriority="high">{% endif %}</a>
   <div class="text">
-    <a class="cat" href="/{{ f.periodKey }}/">{{ f.period }}</a>
+    <a class="cat" href="/{{ f.periodKey }}/">{{ f.periodName }}</a>
     <div class="stack">
       <div class="sec-head"><h2 id="featured-title">featured story</h2><span class="bar" aria-hidden="true"></span></div>
       <a class="title" href="{{ f.url }}">{{ f.title }}</a>

@@ -116,10 +116,10 @@ collections:
         name: period
         widget: select
         options:
-          - { label: "01 Pre-contact period", value: "Pre-Contact" }
-          - { label: "02 Colonial period", value: "Colonial" }
-          - { label: "03 WWII", value: "WWII" }
-          - { label: "04 Contemporary period", value: "Contemporary" }
+          - { label: "01 Ancient Ground", value: "Pre-Contact" }
+          - { label: "02 Colonial Layers", value: "Colonial" }
+          - { label: "03 Footprints of War", value: "WWII" }
+          - { label: "04 Island Dispatches", value: "Contemporary" }
       - { label: "Lead photo", name: image, widget: image, choose_url: false, hint: "Shown at the top of the story and on its card." }
       - { label: "Lead photo description (for screen readers)", name: imageAlt, widget: string, required: false }
       - { label: "Dek (subtitle)", name: dek, widget: text, required: false, hint: "One or two sentences under the title. Also used on the featured story." }

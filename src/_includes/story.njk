@@ -8,13 +8,13 @@ ogType: article
 {%- set s = story %}
 {%- set hasShort = s.shortBody %}
 {%- set tabs = [{ label: "home", url: "/" }] %}
-{%- for p in periods %}{% set tabs = (tabs.push({ label: p.key, num: p.num, url: "/" + p.key + "/", current: p.period == s.period }), tabs) %}{% endfor %}
+{%- for p in periods %}{% set tabs = (tabs.push({ label: p.label, num: p.num, url: "/" + p.key + "/", current: p.period == s.period }), tabs) %}{% endfor %}
 <div class="progress" aria-hidden="true"><span data-progress></span></div>
 {% include "partials/head-small.njk" %}
 <main id="content" data-story{% if hasShort %} data-mode="short"{% endif %}>
 <section class="split s-title">
   <div class="side">
-    <a class="cat" href="/{{ s.periodKey }}/">{{ s.period }}</a>
+    <a class="cat" href="/{{ s.periodKey }}/">{{ s.periodName }}</a>
     <div class="s-date"><time datetime="{{ s.date | isoDate }}">{{ s.date | longDate }}</time>{{ ago(s.date) }}</div>
   </div>
   <div class="main">
@@ -127,13 +127,13 @@ ogType: article
 
 {%- if s.related.length %}
 <section class="related" aria-labelledby="related-title">
-  <div class="sec-head"><h2 id="related-title">more {{ s.period }}</h2><span class="bar" aria-hidden="true"></span></div>
+  <div class="sec-head"><h2 id="related-title">more {{ s.periodName }}</h2><span class="bar" aria-hidden="true"></span></div>
   <div class="rel-list">
     {%- for r in s.related %}
     <a href="{{ r.url }}">
       {% if r.lead %}<img class="thumb" src="{{ r.lead.src }}" alt="" width="{{ r.lead.width }}" height="{{ r.lead.height }}" loading="lazy" decoding="async">{% else %}<span class="thumb"></span>{% endif %}
       <span class="r">
-        <span class="cat">{{ r.period }}</span>
+        <span class="cat">{{ r.periodName }}</span>
         <span class="rt"><span>{{ r.title }}</span><span class="when"><time datetime="{{ r.date | isoDate }}">{{ r.date | longDate }}</time>{{ ago(r.date) }}</span></span>
       </span>
     </a>

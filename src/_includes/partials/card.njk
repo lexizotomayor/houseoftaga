@@ -6,7 +6,7 @@
 <article class="card{% if cell.t >= 4 %} big-t{% endif %}{% if cell.d >= 4 %} big-d{% endif %}" style="--d:{{ cell.d }};--t:{{ cell.t }};--a:{{ cell.aspect }};--am:{{ cell.mAspect }}">
   <a class="pic" href="{{ s.url }}" aria-hidden="true" tabindex="-1">{% if s.lead %}<img src="{{ s.lead.src }}" alt="" width="{{ s.lead.width }}" height="{{ s.lead.height }}" loading="lazy" decoding="async">{% endif %}</a>
   <div class="body">
-    <a class="cat" href="/{{ s.periodKey }}/">{{ s.period }}</a>
+    <a class="cat" href="/{{ s.periodKey }}/">{{ s.periodName }}</a>
     <div class="col">
       <span class="n">{{ n | pad2 }}</span>
       <a class="title" href="{{ s.url }}">{{ s.title }}</a>
