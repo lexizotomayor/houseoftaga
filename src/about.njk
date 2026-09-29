@@ -4,24 +4,29 @@ title: About
 pageName: about
 pageNum: "01"
 permalink: /about/
-description: House of Taga is written by Lexi Zotomayor — the history of Saipan, Tinian and Rota, told one piece at a time.
+description: House of Taga is a reporter’s notebook written off deadline — stories from Saipan, Tinian and Rota that warrant a second, deeper look.
 ---
 {#- Text and portrait are edited in the CMS (Pages → About), stored in src/_data/about.json. -#}
 <article class="about">
-  <p class="page-lead">{{ about.lead }}</p>
-  <div class="writer">
-    <div class="portrait">{% if about.portrait %}<img src="{{ about.portrait }}" alt="{{ about.portraitAlt }}" width="600" height="720">{% else %}<span aria-hidden="true">portrait</span>{% endif %}</div>
+  <h2 class="page-lead">{{ about.lead }}</h2>
+  <div class="writer{% if not about.portrait %} writer--solo{% endif %}">
+    {%- if about.portrait %}
+    <div class="portrait"><img src="{{ about.portrait }}" alt="{{ about.portraitAlt }}" width="600" height="720"></div>
+    {%- endif %}
     <div class="bio">
-      <span class="cat cat--flat" style="align-self:flex-start">the writer</span>
-      {%- for para in about.bio %}
+      {%- for para in about.intro %}
       <p>{{ para }}</p>
       {%- endfor %}
     </div>
   </div>
   <div class="list-rows">
-    <span class="kicker">four periods</span>
+    <h3 class="kicker">{{ about.findHeading }}</h3>
     {%- for p in periods %}
-    <a href="/{{ p.key }}/"><span class="big-n">{{ p.num }}</span><span class="txt"><b>{{ p.name }}</b><span>{{ p.note }}</span></span></a>
+    {%- set f = about.find[loop.index0] %}
+    <a href="/{{ p.key }}/"><span class="big-n">{{ p.num }}</span><span class="txt"><b>{{ f.title if f else p.name }}</b><span>{{ f.text if f else p.note }}</span></span></a>
     {%- endfor %}
   </div>
+  {%- if about.closing %}
+  <p class="about-closing">{{ about.closing }}</p>
+  {%- endif %}
 </article>
