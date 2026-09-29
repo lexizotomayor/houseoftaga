@@ -46,9 +46,9 @@ Edit the site at **https://houseoftaga.com/admin/**. Every save is a commit to G
 
 What you can edit:
 
-- **Stories:** write, edit, date, and choose the period. The story body is built from the same pieces as the design: paragraphs, headings, photos with captions, quotes, big pull quotes, editor's notes, lists, photo galleries and YouTube videos. Photos at the very end of the body, and any gallery, appear under "From the archive". Optional extras are a short version (readers get a Short / Full toggle), a timeline, and tags. Reading time and the excerpt fill in automatically when left empty. Switch on **Hide from the site (draft)** to save a story without publishing it.
+- **Stories:** write, edit, date, and choose the period. Paste the whole story into the **Story** box in one go: a blank line starts a new paragraph, and the toolbar handles bold, italic, links, headings, quotes and lists. The **+** button adds a **Photo** (with description and caption), **YouTube video**, **Pull quote** or **Editor's note** wherever the cursor is. Photos at the very end of the story appear under "From the archive". `lib/story-text.js` turns the box into the same pieces the design uses (see the notes at the top of that file). Stories imported from WordPress keep their block-by-block body in the collapsed **Story, block by block (older stories)** field; if the Story box has text, it is used instead. Optional extras are a short version (readers get a Short / Full toggle), a timeline, and tags. Reading time and the excerpt fill in automatically when left empty. Switch on **Hide from the site (draft)** to save a story without publishing it.
 - **Comments:** each story has a **Comments** list at the bottom (see below).
-- **Pages:** the featured story on the home page, the About page (lead line, portrait, the writer) and the Privacy page.
+- **Pages:** the featured story on the home page, the About page (heading, introduction, the four categories, closing line and an optional portrait) and the Privacy page.
 - **Media:** photos upload to `src/assets/uploads/cms/`. Upload them at full size; the site makes web-sized copies.
 
 The page layouts, the four periods and the contact page text live in the templates in `src/`.

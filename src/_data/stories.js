@@ -6,6 +6,7 @@ import { join, dirname, basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import Image from "@11ty/eleventy-img";
 import periods from "./periods.js";
+import { storyBlocks } from "../../lib/story-text.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const src = join(here, "..");
@@ -77,8 +78,10 @@ export default async function () {
 
   const stories = await Promise.all(raw.map(async (s) => {
     const p = periods.find((x) => x.period === s.period) || periods[0];
-    const blocks = s.blocks || [];
-    const hasShort = s.short && s.short.length;
+    // The one-box "Story" text wins when it has been filled in; older stories keep their block list.
+    const blocks = s.bodyText && s.bodyText.trim() ? storyBlocks(s.bodyText) : s.blocks || [];
+    const short = s.shortText && s.shortText.trim() ? storyBlocks(s.shortText) : s.short || [];
+    const hasShort = short.length;
     const { body, archive } = await splitArchive(blocks);
     return {
       ...s,
@@ -91,14 +94,14 @@ export default async function () {
       author: titleCase(s.author || "House of Taga Desk"),
       excerpt: s.excerpt || excerptOf(blocks),
       readMin: s.readMin || minutes(blocks),
-      shortMin: hasShort ? (s.shortMin || minutes(s.short)) : null,
+      shortMin: hasShort ? (s.shortMin || minutes(short)) : null,
       tags: s.tags || [],
       timeline: s.timeline && s.timeline.length ? s.timeline : null,
       comments: [...(s.comments || [])].sort((a, b) => String(b.date).localeCompare(String(a.date))),
       lead: await img(s.image),
       body,
       archive,
-      shortBody: hasShort ? await prepare(s.short) : null,
+      shortBody: hasShort ? await prepare(short) : null,
     };
   }));
 
