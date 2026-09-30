@@ -1,88 +1,22 @@
 {
- "slug": "japanese-wwii-veteran-yoshio-ideguchi-survived-on-eating-snails-in-saipan-jungle",
- "title": "Japanese WWII veteran Yoshio Ideguchi survived on eating snails in Saipan jungles",
- "date": "2019-06-11T22:32:05Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "WWII",
- "period": "WWII",
- "categories": [
-  "WWII"
- ],
- "tags": [
-  "Kyodo",
-  "Yokosuka"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2019/06/b.goode_httpss.mj_.runnIXG2kWXyw0_In_this_similar_style_of_bla_eb424c5e-af64-4c40-b2e7-88300e86af14_0.png",
- "imageAlt": "b.goode_httpss.mj.runnIXG2kWXyw0_In_this_similar_style_of_bla_eb424c5e-af64-4c40-b2e7-88300e86af14_0",
- "excerpt": "Months after Captain Oba Sakae's surrender to American forces on Saipan, one Japanese paratrooper's tale of survival emerged, recounting a harrowing ordeal in the island's dense jungles.",
- "words": 273,
- "readMin": 1,
- "blocks": [
-  {
-   "type": "p",
-   "text": "Months after Captain Oba Sakae's surrender to American forces on Saipan, one Japanese paratrooper's tale of survival emerged, recounting a harrowing ordeal in the island's dense jungles."
-  },
-  {
-   "type": "p",
-   "text": "Yoshio Ideguchi, a Japanese veteran, shared his story through translators, Kyodo News reporters Eiichiro Ishiyama and Makoto Hori. Ideguchi disclosed that he remained hidden in the jungle until July 1945, sustaining himself by consuming snails."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2019/06/IMG_7835-1280x853-1-1024x682.jpg",
-   "alt": "",
-   "caption": ""
-  },
-  {
-   "type": "p",
-   "text": "Recalling the surreal moment of surrender, Ideguchi admitted that the initial announcement felt unfamiliar until a native Japanese speaker implored them to surface, prompting him to emerge from hiding."
-  },
-  {
-   "type": "p",
-   "text": "Born on October 8, 1925, Ideguchi enlisted in the Japanese Imperial Navy at the age of 18. After completing training in Nagasaki, he was deployed to Saipan in February 1944, amidst the Japanese forces' efforts to bolster their defenses on the island."
-  },
-  {
-   "type": "p",
-   "text": "During the voyage from Yokosuka to Saipan, Ideguchi harbored fears of American submarine attacks, unaware of their destination until they arrived. Reflecting on the invasion of Saipan by American forces, Ideguchi acknowledged the overwhelming firepower and relentless bombing that rendered their defenses futile."
-  },
-  {
-   "type": "p",
-   "text": "Recollections of his return to base unscathed amidst the chaos of battle have faded with time, yet Ideguchi's enduring connection to Saipan brought him back more than 30 times, including a poignant visit in June 2014 to commemorate the battle that shaped his destiny."
-  },
-  {
-   "type": "p",
-   "text": "Expressing gratitude for the peace and camaraderie he experienced on the island, Ideguchi fondly recalled a festive gathering at the Manamko' Center, where he bonded with locals over shared music from their respective cultures, transcending language barriers and embodying the universal language of harmony and understanding."
-  },
-  {
-   "type": "p",
-   "text": "サイパンで大場栄の降伏から数か月後、一人の日本のパラシュート兵の生存の物語が語られ、密林における困難な試練を振り返った。"
-  },
-  {
-   "type": "p",
-   "text": "日本の退役軍人、井出口義夫は、共同通信の報道者である石山英一郎と堀誠の通訳を通じて彼の物語を語った。井出口は、密林に隠れていたが、それが1945年7月まで続いたことを明らかにし、蝸牛を食べることで生き延びていたと述べた。"
-  },
-  {
-   "type": "p",
-   "text": "降伏の不思議な瞬間を回想し、井出口は、最初の発表が不慣れに感じられたが、日本語のネイティブスピーカーが彼らに出てくるよう懇願するまで、隠れているように感じたと認めた。"
-  },
-  {
-   "type": "p",
-   "text": "1925年10月8日生まれの井出口は、18歳で日本帝国海軍に入隊した。長崎での訓練を終えた後、1944年2月に日本軍が島の防衛を強化する中、サイパンに展開した。"
-  },
-  {
-   "type": "p",
-   "text": "横須賀からサイパンへの航海中、井出口は、アメリカの潜水艦の攻撃を恐れていたが、目的地が到着するまで知らされていなかった。アメリカ軍によるサイパン侵攻を振り返り、井出口は、彼らの防御が無駄になったと認めた。"
-  },
-  {
-   "type": "p",
-   "text": "戦闘の混乱の中で無傷で基地に戻った彼の思い出は時間の経過とともに薄れていったが、井出口はサイパンとの不滅のつながりが彼を30回以上も戻らせ、2014年6月には彼の運命を形作った戦いを追悼するために感動的な訪問を行った。"
-  },
-  {
-   "type": "p",
-   "text": "島で経験した平和と仲間意識に感謝し、井出口はマナンコセンターでのお祭りの様子を思い起こし、彼がそれぞれの文化から共有した音楽を通じて地元の人々と絆を深め、言語の壁を超えて調和と理解の普遍的な言語を体現した。"
-  },
-  {
-   "type": "embed",
-   "src": "https://www.youtube.com/watch?v=bsZOkYJOLXk"
-  }
- ]
+  "excerpt": "\"Survival, in those days, was less a matter of courage than of blind luck.\" Unaware the island had fallen, Yoshio Ideguchi spent months in the dense jungles of Saipan waiting for a war that had already passed him by. Read the personal story of a World War II holdout who turned a site of tragedy into a lifetime of peaceful return.",
+  "period": "WWII",
+  "blocks": [],
+  "words": 273,
+  "author": "HOUSE OF TAGA DESK",
+  "slug": "japanese-wwii-veteran-yoshio-ideguchi-survived-on-eating-snails-in-saipan-jungle",
+  "imageAlt": "An AI-generated illustration of Yoshio Ideguchi surviving on eating snails in the Saipan jungles. ",
+  "date": "2019-06-11T22:32:05Z",
+  "bodyText": "Months after Captain Oba Sakae finally descended the mountain to yield his sword, another ghost remained in the shadows of Saipan. I was eighteen when I first set foot on that island, young enough that the fog of war had not yet settled into my bones, though it soon would.\n\nWe had sailed out from Yokosuka in early 1944, a bellyful of boys staring out at an endless, dark Pacific. None of us knew where the ship was taking us, only that American submarines were waiting somewhere beneath the swell, silent and patient. When we arrived, the air was thick with heat and the quiet desperation of a military trying to fortify a paradise.\n\nThen came the fire. The American invasion did not feel like a battle so much as a collapse of the sky. Their bombs fell without pause, their guns roared from the tide, and everything we had built was turned to splinters and dust. How I made it back through that initial storm without a scratch is a detail time has mercifully smudged away. Survival, in those days, was less a matter of courage than of blind luck.\n\nFor months, the jungle became my entire world. It was a dark, tangled green where time stopped moving. I lived on what the damp earth offered, mostly snails gathered from the underbrush, keeping my breath quiet while the island moved on around me. When the call to surrender finally drifted into the canopy, the words sounded strange, almost foreign to ears accustomed only to the wind and the birds. It was not until a familiar voice—a native speaker pleading with us to step into the light—reached into the thicket that I understood the war was truly over.\n\nI have gone back to Saipan more than thirty times since. The island that once tried to swallow me whole has become a place of quiet reconciliation. On a summer afternoon in 2014, sitting among the elders at the Manamko’ Center, we played music together—their songs, my songs, standard tunes that needed no translation. The jungle has long since reclaimed the bomb craters, and where there was once only relentless noise, there is now just the simple, sweet harmony of people who survived.",
+  "title": "The Story of Yoshio Ideguchi",
+  "tags": [
+    "Kyodo",
+    "Yokosuka"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2019/06/b.goode_httpss.mj_.runnIXG2kWXyw0_In_this_similar_style_of_bla_eb424c5e-af64-4c40-b2e7-88300e86af14_0.png",
+  "readMin": 1,
+  "categories": [
+    "WWII"
+  ],
+  "category": "WWII"
 }
