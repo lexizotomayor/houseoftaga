@@ -1,4 +1,26 @@
 {
+  "timeline": [
+    {
+      "date": "16 July 44",
+      "what": "Air Strike: TG 58.2 flew 74 sorties over Guam, dropping 28 tons of bombs, 24 rockets, and 20 incendiary clusters, losing one plane while saving the pilot and crew."
+    },
+    {
+      "date": "15 July 44",
+      "what": "Reconnaissance: Ground/reef reconnaissance drew fire near Bangi Point, resulting in 1 officer killed and 5 men wounded, with naval rocket/shell support firing on tree lines and identifying coral head choke points."
+    },
+    {
+      "date": "18 July 44",
+      "what": "Bombardment: Task Force 58 launched over 1,000 sorties and 400 tons of bombs in a single day against defensive positions."
+    },
+    {
+      "what": "Landings: The 1st Marine Division landed at Asan, while the 1st Marine Provisional Brigade and 77th Infantry Division struck Agat at 0830.",
+      "date": "21 July 44"
+    },
+    {
+      "date": "23 July 44",
+      "what": "By July 23, the road from Agana to Piti and Mount Tenjo were secured, with American casualties recorded at 348 killed, 1,500 wounded, and 110 missing. Following the counteroffensive around Orote Peninsula, American fatalities reached 587 by July 26, and total killed reached 948 by July 31."
+    }
+  ],
   "excerpt": "In July 1944, the campaign to reclaim Guam unfolded with systematic precision. Operational logs from Volume 5 of the Nimitz Gray Book trace the critical days leading up to and following the July 21 assault: relentless carrier air strikes by Task Force 58, dangerous reef reconnaissance off Agat, and the eventual landing of Marine and Army forces that secured the island against fierce opposition. What follows is a timeline of those pivotal operations, detailing the sorties, naval shore bombardments, and human cost of the liberation.",
   "period": "WWII",
   "blocks": [],
