@@ -1,80 +1,26 @@
 {
- "slug": "1465-2",
- "title": "A trove of rare WWII photographs in full color",
- "date": "2019-06-12T21:28:49Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "WWII",
- "period": "WWII",
- "categories": [
-  "WWII"
- ],
- "tags": [
-  "Isely Field",
-  "Kodachrome",
-  "nose art",
-  "photographs",
-  "Saipan",
-  "WWII"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2019/06/Base-Operations-on-Isley-Field-scaled.jpg",
- "imageAlt": "Conroy Field",
- "excerpt": "In the quiet corners of Cleveland, Ohio, Staff Sergeant Raymond Hagley left behind a treasure trove of history, a collection of Kodachrome slides that would illuminate the past for generations to come.",
- "words": 468,
- "readMin": 2,
- "blocks": [
-  {
-   "type": "p",
-   "text": "In the quiet corners of Cleveland, Ohio, Staff Sergeant Raymond Hagley left behind a treasure trove of history, a collection of Kodachrome slides that would illuminate the past for generations to come."
-  },
-  {
-   "type": "p",
-   "text": "For his son Greg, the discovery of these rare WWII color photographs was a revelation. Tucked away among his father's belongings were a dozen slides capturing the vivid hues of a bygone era."
-  },
-  {
-   "type": "p",
-   "text": "Ray's journey to Saipan in the summer of 1944 marked the beginning of a remarkable chapter in his life. As part of the 73rd Bombardment Wing, he served under the command of General Emmitt O'Donnell Jr., documenting the war through the lens of his camera."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2019/06/Photo-9-Staff-Sergeant-Ray-Hagley-on-Saipan-1.jpg",
-   "alt": "",
-   "caption": ""
-  },
-  {
-   "type": "p",
-   "text": "A talented artist and photographer, Ray's passion for visual storytelling was evident long before his military service. From his days touring with the Bob Grayson Band to his encounters with jazz legend Glenn Miller, Ray's life was colored by a rich tapestry of experiences."
-  },
-  {
-   "type": "p",
-   "text": "Drafted into the U.S. Air Force in 1943, Ray honed his craft during basic training at Colorado State College before being stationed on Saipan with the 20th Army Air Force's 73rd Bombardment Wing."
-  },
-  {
-   "type": "p",
-   "text": "Greg fondly recalls his father's tales of the journey to Saipan, a harrowing flight devoid of windows that stretched on for endless hours over the ocean. Yet amid the desolation of war-torn Saipan, Ray found moments of respite, often cooling off with his comrades in the waters off Ladder Beach."
-  },
-  {
-   "type": "p",
-   "text": "But it was behind the lens of his camera that Ray truly left his mark. Armed with a Kine Exakta 35 mm camera and a keen eye for detail, he captured the essence of life on Saipan with remarkable clarity."
-  },
-  {
-   "type": "p",
-   "text": "\"In an era dominated by black and white photography, Ray's use of Kodachrome film was revolutionary,\" reflects Greg. \"The vibrant colors and stunning detail of his photographs bring the past to life with unparalleled clarity.\""
-  },
-  {
-   "type": "p",
-   "text": "Today, 75 years after Ray first pressed the shutter release, his photographs remain as vibrant as ever, a testament to the enduring power of his artistry."
-  },
-  {
-   "type": "p",
-   "text": "In addition to his photography, Ray found solace in the art of nose art, channeling his creativity into intricate designs that adorned military aircraft."
-  },
-  {
-   "type": "p",
-   "text": "When Ray passed away in 1991, he left behind a legacy of images that would shape his family's understanding of the past. In 2007, the Hagley family embarked on a pilgrimage to Saipan, sharing Ray's photographs with the CNMI government as a tribute to his enduring legacy."
-  },
-  {
-   "type": "p",
-   "text": "As Greg reflects on his father's life and legacy, he is reminded of the power of photography to transcend time and space, capturing moments that would otherwise be lost to history. And in the vibrant hues of Ray's Kodachrome slides, the spirit of a bygone era lives on, a testament to the courage and resilience of those who served."
-  }
- ]
+  "excerpt": "When a visitor walked into the Island Locator office carrying a small box of World War II Kodachrome slides, the past stopped being a matter of black-and-white photographs. Here is the story of Sergeant Raymond Hagley, the rare color images he made on Saipan, and the family who brought them back home.",
+  "period": "WWII",
+  "blocks": [],
+  "words": 468,
+  "author": "HOUSE OF TAGA DESK",
+  "slug": "1465-2",
+  "imageAlt": "Conroy Field",
+  "date": "2019-06-12T21:28:49Z",
+  "bodyText": "When you work for a small island magazine, history rarely arrives in a grand procession. More often, it walks through the front door carrying a small box and a quiet set of memories.\n\nThat was how I met Greg Hagley and his two sons. They had traveled a long way to these islands, bringing a rare cargo: a handful of Kodachrome slides taken during the Second World War by Greg’s father, Staff Sergeant Raymond Hagley.\n\nIn those days, war was recorded mostly in shades of charcoal and gray. But Ray Hagley was an artist—a young man who had toured with swing bands and crossed paths with Glenn Miller before the draft found him in 1943. When the Army Air Force sent him to Saipan with the 73rd Bombardment Wing, he brought along a Kine Exakta 35mm camera and a few rolls of color film.\n\nListening to the family talk, you could sense how much those small squares of celluloid meant to them. Greg recalled his father telling stories of the long flight across the Pacific in a windowless plane, and of the heat on Saipan, where airmen washed away the salt and dust off Ladder Beach. Between missions, Ray painted nose art on the bombers and looked at the island through his lens. While others saw only scorched ground and military routine, Ray saw color: the deep blue of the Pacific, the green of the palms, the bright red of sunlit soil.\n\nRay died in 1991, leaving the slides tucked away in Cleveland. Years later, his family uncovered them—a dozen bright moments saved from a summer long ago. In 2007, Greg and his sons made the trip to Saipan to present the images to the local government, and they were generous enough to let our magazine share them.\n\nHolding those slides up to the light, decades after the shutter clicked, felt like looking through a clean window into a distant afternoon. War has a way of turning men into numbers and places into maps. But in Ray’s Kodachrome hues, the sky is blue again, the men are young, and the island stands still.",
+  "title": "Ray Hagley's Saipan in Color",
+  "tags": [
+    "Isely Field",
+    "Kodachrome",
+    "nose art",
+    "photographs",
+    "Saipan",
+    "WWII"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2019/06/Base-Operations-on-Isley-Field-scaled.jpg",
+  "readMin": 2,
+  "categories": [
+    "WWII"
+  ],
+  "category": "WWII"
 }
