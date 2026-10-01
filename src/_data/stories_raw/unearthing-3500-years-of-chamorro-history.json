@@ -1,52 +1,26 @@
 {
- "slug": "unearthing-3500-years-of-chamorro-history",
- "title": "Unearthing 3,500 Years of Chamorro History",
- "date": "2024-02-13T02:36:24Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "Pre-Contact Period",
- "period": "Pre-Contact",
- "categories": [
-  "Pre-Contact Period"
- ],
- "tags": [
-  "Barcelona",
-  "Chamorro",
-  "ecology",
-  "Ritidian",
-  "University of Guam",
-  "University of Hawaii"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2025/02/3973202271_386af6ee4f.jpg",
- "imageAlt": "3973202271_386af6ee4f",
- "excerpt": "GUAM — Like an ancient fossil suspended in amber, Ritidian, a site nestled within the heart of Guam, stands as a testament to the enduring legacy of the Chamorro people spanning over 3,500 years. Discovered by…",
- "words": 350,
- "readMin": 2,
- "blocks": [
-  {
-   "type": "p",
-   "text": "GUAM — Like an ancient fossil suspended in amber, Ritidian, a site nestled within the heart of Guam, stands as a testament to the enduring legacy of the Chamorro people spanning over 3,500 years. Discovered by archaeologists decades ago, Ritidian not only offers a glimpse into the ancient Chamorro civilization but also serves as a sanctuary for endangered species, shielded from the relentless march of time by the protective embrace of the U.S. Fish & Wildlife Service."
-  },
-  {
-   "type": "p",
-   "text": "Dr. Mike T. Carson, an esteemed archaeologist from the University of Guam, has dedicated years to unraveling the mysteries hidden within Ritidian's hallowed grounds. Through painstaking excavation and meticulous analysis, Dr. Carson and his team have unearthed a treasure trove of artifacts, providing unprecedented insights into the cultural evolution of the Chamorro people and their intimate relationship with the island's ecology."
-  },
-  {
-   "type": "p",
-   "text": "From the remnants of ancient villages to the intricate rock art adorning the cave walls, Ritidian offers a window into a bygone era. Dr. Carson's research suggests that Ritidian may have been one of the earliest settlements in the remote Pacific, challenging previous notions of transoceanic migration and highlighting the resilience of the Chamorro ancestors in the face of daunting challenges."
-  },
-  {
-   "type": "p",
-   "text": "Moreover, recent studies conducted by Dr. James M. Bayman of the University of Hawaii shed light on the gendered division of labor within Chamorro society, revealing a complex tapestry of societal organization that echoes across millennia. Dr. Bayman's findings, coupled with ongoing research led by Dr. Sandra Monton-Subias of the Unibersidat Pompeu Fabra in Barcelona, promise to deepen our understanding of the initial contact between Chamorro natives and Western colonizers, marking a pivotal chapter in Guam's rich cultural tapestry."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2024/02/latte_village_01-1024x682.jpg",
-   "alt": "",
-   "caption": ""
-  },
-  {
-   "type": "p",
-   "text": "As the sun sets over the ancient ruins of Ritidian, Dr. Carson reflects on the invaluable lessons gleaned from over three millennia of Chamorro history. In a world grappling with the challenges of climate change, environmental degradation, and social upheaval, Ritidian stands as a beacon of wisdom, offering timeless insights into the resilience of the human spirit and the enduring legacy of a people shaped by the forces of time and tide."
-  }
- ]
+  "excerpt": "At the northern tip of Guam, 3,500 years of Chamorro history rest beneath the limestone cliffs and quiet canopy of Ritidian. A personal reflection on ocean migrations, ancient stone, and what remains when the noise of academic debate fades into the tide.",
+  "period": "Pre-Contact",
+  "blocks": [],
+  "words": 350,
+  "author": "Lexi Zotomayor",
+  "slug": "unearthing-3500-years-of-chamorro-history",
+  "imageAlt": "",
+  "date": "2024-02-13T02:36:24Z",
+  "bodyText": "For a non-specialist dipping into the deep well of Pacific history, the debate over how and whence the Chamorro people first arrived in the Mariana Islands can easily feel like a conversation held in hushed, distant corridors. Yet, to look upon the limestone cliffs and sands of Ritidian, on the northern tip of Guam, is to see that 3,500 years of human existence do not live merely in academic disputes; they live in the ground beneath one’s feet.\n\nThe place has the quality of a specimen preserved in amber. Shielded now as a national wildlife refuge, Ritidian sits quiet, detached from the urgent tempo of modern life. Where the sea meets the forest, one finds the quiet remnants of ancient villages, the faint tracing of red pigment on cave walls, and the stone pillars that once carried the weight of ancestral roofs. To walk among them is to realize that this was not merely a point on a map, but a home—one of the earliest permanent settlements in the vastness of the remote Pacific.\n\nScholars have spent lifetimes here piecing together the story. Through their trowels and careful dustings, the landscape begins to speak. They find evidence of an intricate, orderly world: the subtle division of everyday labor, the deliberate shaping of stone tools, and the long, quiet centuries during which a community learned the exact nature of its island’s ecology. Later still came the arrival of European sails on the horizon, an encounter whose echoes still ripple through the archipelago.\n\nYet for all the scholarly rigor that uncovers it, Ritidian offers something simpler to the casual reader of history. It reminds us of the sheer tenacity required to navigate an open ocean three millennia ago, to find a tiny strip of land, and to stay. As the sun drops below the Philippine Sea and the forest darkens, the ancient stones remain—unmoved by time, indifferent to the tide, carrying the quiet dignity of a people who made a home out of the sea.",
+  "title": "At Ritidian",
+  "tags": [
+    "Barcelona",
+    "Chamorro",
+    "ecology",
+    "Ritidian",
+    "University of Guam",
+    "University of Hawaii"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2025/02/3973202271_386af6ee4f.jpg",
+  "readMin": 2,
+  "categories": [
+    "Pre-Contact Period"
+  ],
+  "category": "Pre-Contact Period"
 }
