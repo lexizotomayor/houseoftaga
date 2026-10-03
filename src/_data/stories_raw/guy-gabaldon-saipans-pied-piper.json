@@ -1,61 +1,38 @@
 {
- "slug": "guy-gabaldon-saipans-pied-piper",
- "title": "Guy Gabaldon: Saipan's Pied Piper",
- "date": "2019-06-12T19:41:36Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "WWII",
- "period": "WWII",
- "categories": [
-  "WWII"
- ],
- "tags": [
-  "Japan",
-  "Marianas",
-  "Marines",
-  "Pied Piper",
-  "Saipan"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2019/06/b.goode_Illustrate_in_black_and_white_WSJ_hedcut_style_of_sti_43a9b298-ae32-40f2-a1a6-5f2acabe5716_2.png",
- "imageAlt": "US Marines on an island",
- "excerpt": "The surrender of 1,500 soldiers and civilians on Saipan in 1944 is attributed to the bravery and ingenuity of WWII veteran Guy Gabaldon, earning him the moniker \"Pied Piper of Saipan.\" Although he convinced hundreds to…",
- "words": 361,
- "readMin": 2,
- "blocks": [
-  {
-   "type": "p",
-   "text": "The surrender of 1,500 soldiers and civilians on Saipan in 1944 is attributed to the bravery and ingenuity of WWII veteran Guy Gabaldon, earning him the moniker \"Pied Piper of Saipan.\" Although he convinced hundreds to lay down their arms and capitulate to the Americans, Gabaldon's heroism went beyond the battlefield. Despite being recommended for a Medal of Honor, he was awarded the Navy Cross for his extraordinary actions."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2019/06/PiedPiperofSaipan2.jpg",
-   "alt": "A painting of Guy Gabaldon leading a pack of Japanese captives.",
-   "caption": "In a painting by Henry Godines, Guy Gabaldon leads a pack of Japanese captives."
-  },
-  {
-   "type": "p",
-   "text": "Enlisting in the U.S. Marine Corps at the tender age of 17, Gabaldon trained at Camp Pendleton before being assigned to the 2nd Regiment, Second Marine Division. His unique ability to speak Japanese, acquired through his interactions with first-generation Japanese immigrants in Los Angeles, California, proved to be a crucial asset once he arrived on the island of Saipan."
-  },
-  {
-   "type": "p",
-   "text": "On his first night on the island, Gabaldon immediately sprang into action, working alone to bring back two prisoners using his fluency in the \"backstreet Japanese\" dialect. Navigating the treacherous jungles of Saipan, he overheard vital intelligence about a major Japanese attack, allowing him to thwart a potentially devastating blow to the American forces."
-  },
-  {
-   "type": "p",
-   "text": "However, amidst the chaos of war, Gabaldon witnessed harrowing scenes of Japanese civilians, including children, leaping to their deaths from cliffs to avoid capture by the Americans. Despite his efforts to intervene and prevent these tragic deaths, fear and propaganda fueled the civilians' resolve to face their fate."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2019/06/Gabaldon_1944.jpg",
-   "alt": "",
-   "caption": ""
-  },
-  {
-   "type": "p",
-   "text": "In one particularly poignant encounter at the stockade, Gabaldon encountered a woman whom he had saved from jumping off a cliff with her child. Reflecting on the horrors of war, Gabaldon lamented the tragic loss of life and the toll it took on the human psyche."
-  },
-  {
-   "type": "p",
-   "text": "Gabaldon's remarkable wartime experiences and courageous exploits in the jungles of Saipan would later be immortalized in the movie \"Hell to Eternity\" and the book \"EAST L.A. MARINE: THE UNTOLD TRUE STORY OF GUY.\" Despite his heroic deeds, Gabaldon remained humble, living with his family on Saipan for two decades before passing away from a heart attack in his Florida home on August 31, 2006, at the age of 80. His ashes were scattered on Mt. Tapochau, a fitting tribute to a true American hero."
-  }
- ]
+  "excerpt": "He was seventeen when he went to war and knew the street talk of Los Angeles. In the dark jungles of Saipan, Guy Gabaldon walked alone into enemy lines and brought back fifteen hundred men without firing a shot. A sharp, unsparing account of courage, the quiet horror of the cliffs, and a Marine who did his job and went home",
+  "period": "WWII",
+  "blocks": [
+    {
+      "type": "img",
+      "src": "https://houseoftaga.com/wp-content/uploads/2019/06/PiedPiperofSaipan2.jpg",
+      "alt": "A painting of Guy Gabaldon leading a pack of Japanese captives.",
+      "caption": "In a painting by Henry Godines, Guy Gabaldon leads a pack of Japanese captives."
+    },
+    {
+      "type": "img",
+      "src": "https://houseoftaga.com/wp-content/uploads/2019/06/Gabaldon_1944.jpg",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "words": 361,
+  "author": "HOUSE OF TAGA DESK",
+  "slug": "guy-gabaldon-saipans-pied-piper",
+  "imageAlt": "US Marines on an island",
+  "date": "2019-06-12T19:41:36Z",
+  "bodyText": "In 1944 on Saipan, Guy Gabaldon brought in fifteen hundred men and civilians. They called him the Pied Piper of Saipan. He was brave and he was smart, but his work was not only the fighting. They recommended him for the Medal of Honor, but they gave him the Navy Cross instead.\n\nHe joined the Marines when he was seventeen. He trained at Camp Pendleton and went to the 2nd Regiment of the Second Division. In Los Angeles he had known the first-generation Japanese, and he learned their speech. That was what mattered when he reached the island.\n\nOn his first night he went out alone. He used the street Japanese he knew and came back with two prisoners. He walked the jungle in the dark and heard the Japanese planning a big attack. He brought the word back and saved many men.\n\nThe war was hard. He saw the civilians jump from the high cliffs into the sea. The women held their children and jumped because they were afraid of the Americans and believed the propaganda. Gabaldon tried to stop them, but they jumped anyway.\n\nLater, at the stockade, he saw a woman he had pulled back from the cliff edge with her child. He looked at her and thought about the war and what it does to people, and he was sad.\n\nThey made a movie about him called *Hell to Eternity*, and someone wrote a book called *East L.A. Marine*. But Gabaldon did not talk big. He lived on Saipan with his family for twenty years. He died of a heart attack in Florida on August 31, 2006. He was eighty years old. They took his ashes back to Saipan and scattered them on Mount Tapochau. That was a good place for him.",
+  "title": "Saipan's Pied Piper",
+  "tags": [
+    "Japan",
+    "Marianas",
+    "Marines",
+    "Pied Piper",
+    "Saipan"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2019/06/b.goode_Illustrate_in_black_and_white_WSJ_hedcut_style_of_sti_43a9b298-ae32-40f2-a1a6-5f2acabe5716_2.png",
+  "readMin": 2,
+  "categories": [
+    "WWII"
+  ],
+  "category": "WWII"
 }
