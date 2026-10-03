@@ -1,82 +1,24 @@
 {
- "slug": "japanese-soldier-vows-to-pray-on-saipan-as-long-as-he-lives",
- "title": "Japanese soldier vows to pray on Saipan as long as he lives",
- "date": "2019-06-11T21:57:55Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "WWII",
- "period": "WWII",
- "categories": [
-  "WWII"
- ],
- "tags": [
-  "Japan",
-  "Saipan",
-  "Teruki Okazaki",
-  "WWII"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2019/06/avz-parade-ceremony-okazaki.jpg",
- "imageAlt": "Okazaki at a ceremony",
- "excerpt": "A former Imperial Army soldier has vowed to keep coming back to Saipan to pray for those who perished in the brutal Battle of Saipan.",
- "words": 341,
- "readMin": 1,
- "blocks": [
-  {
-   "type": "p",
-   "text": "A former Imperial Army soldier has vowed to keep coming back to Saipan to pray for those who perished in the brutal Battle of Saipan."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2019/06/avz-mass2-okazaki-1024x1018.jpg",
-   "alt": "",
-   "caption": "Private First Class Teruki Okazaki, a former Imperial Japanese Army heavy artillery unit soldier, on Saipan for the 70th anniversary in 2014."
-  },
-  {
-   "type": "p",
-   "text": "Private First Class Teruki Okazaki, a former Imperial Japanese Army heavy artillery unit soldier, came to Saipan in June 2014 to participate in the commemoration of the 70th year of the battle that claimed the lives of more than 20,000 of Teruki's fellow soldiers."
-  },
-  {
-   "type": "p",
-   "text": "Okazaki-san, who lives in Sakaide-city with his wife, and son’s family, came to Saipan with his granddaughter Yuki-san and four other family members."
-  },
-  {
-   "type": "p",
-   "text": "Having learned of the island’s intent to commemorate the 70th anniversary of the invasion that led to war’s end, he conveyed his appreciation through Yuki-san for the Northern Marianas’ invite for them to come over and join the celebration."
-  },
-  {
-   "type": "p",
-   "text": "His coming to Saipan and mingling with fellow World War II veterans from the United States is by huge measure a testament to the two former World War II enemies’ resolve to promote peace in the region."
-  },
-  {
-   "type": "p",
-   "text": "It has indeed been 70 years and Japan and the United States have come a long way in the process of healing."
-  },
-  {
-   "type": "p",
-   "text": "Okazaki-san was born on September 28, 1921 in Sakaide-city, Kagawa prefecture in Shikoku island, Japan."
-  },
-  {
-   "type": "p",
-   "text": "He arrived on Saipan in early 1944 from Manchuria by ship as a part of the Heavy Artillery 9th Regiment."
-  },
-  {
-   "type": "p",
-   "text": "During the Saipan invasion, he was seriously injured, but rescued by American troops and sent to the POW camp in Ohio."
-  },
-  {
-   "type": "p",
-   "text": "After he returned back to Japan, he married and had one son and two daughters."
-  },
-  {
-   "type": "p",
-   "text": "He has been growing olive and orange trees and running a plastics bag factory. He lives in Sakaide-city with his wife, and son’s family."
-  },
-  {
-   "type": "p",
-   "text": "Okazaki-san shares his perspective and experience as a Japanese soldier during WWII with his fellow veterans and the community at the Camp Fire Chat on June 13, 2014 at the American Memorial Park. He shared the stage with American veterans Carl Matthews and Raymond Kelly."
-  },
-  {
-   "type": "p",
-   "text": "It was truly a reunion of honor, a celebration of peace."
-  }
- ]
+  "excerpt": "Seventy years after surviving one of the Pacific War’s bloodiest battles, a former Imperial Japanese Army artilleryman returns to the island he once fought for—not to dwell on the violence of the past, but to offer prayers for the fallen, share a stage with his former enemies, and bear quiet witness to the stubborn persistence of peace.",
+  "period": "WWII",
+  "blocks": [],
+  "words": 341,
+  "author": "Lexi Zotomayor",
+  "slug": "japanese-soldier-vows-to-pray-on-saipan-as-long-as-he-lives",
+  "imageAlt": "Okazaki at a ceremony",
+  "date": "2019-06-11T21:57:55Z",
+  "bodyText": "Seventy years have a way of softening the sharpest edges of memory, smoothing out the jagged horrors of war until what remains, under the Pacific sun, is the quiet necessity of remembering.\n\nOn a June morning in 2014, Teruki Okazaki returned to Saipan. He was ninety-two years old, a former Private First Class in the Imperial Japanese Army’s Heavy Artillery 9th Regiment, born back in the early autumn of 1921 in Sakaide-city, on the island of Shikoku. He had first set foot on Saipan early in 1944, arriving by ship from Manchuria—a young man stepping into a dark and furious storm. When the island fell, more than 20,000 of his comrades perished in the violence. Private Okazaki was gravely wounded himself, rescued by American forces, and borne off to a prisoner-of-war camp in Ohio.\n\nHe survived, as men sometimes do, and went home to build a life out of simpler, sweeter things. He married, raised a son and two daughters, worked a factory that made plastic bags, and tended to the slow, steady growth of olive and orange trees.\n\nYet when word reached Sakaide that the Northern Mariana Islands intended to mark the 70th anniversary of the battle, Okazaki-san packed his bags. Accompanied by his wife, his son’s family, and his granddaughter, Yuki-san—who served as his voice and translator—he journeyed back across the water. He came to give thanks for the island’s invitation, to honor those who never left, and to vow that as long as breath remained in him, he would keep returning to pray.\n\nAt the American Memorial Park on June 13, during a Camp Fire Chat, Okazaki-san took the stage alongside two American veterans, Carl Matthews and Raymond Kelly. They were old men now, gentle in the evening air, sitting together where their younger selves had once sought to destroy one another. To watch them mingle was to witness something small, patient, and immensely powerful: the quiet, stubborn persistence of peace, and the long, grace-filled work of healing.",
+  "title": "The Long Return to Saipan",
+  "tags": [
+    "Japan",
+    "Saipan",
+    "Teruki Okazaki",
+    "WWII"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2019/06/avz-parade-ceremony-okazaki.jpg",
+  "readMin": 1,
+  "categories": [
+    "WWII"
+  ],
+  "category": "WWII"
 }
