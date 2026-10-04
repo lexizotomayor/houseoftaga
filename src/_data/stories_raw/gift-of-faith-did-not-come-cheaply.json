@@ -1,60 +1,61 @@
 {
- "slug": "gift-of-faith-did-not-come-cheaply",
- "title": "Gift of faith did not come cheaply",
- "date": "2024-02-09T07:08:27Z",
- "author": "HOUSE OF TAGA DESK",
- "category": "Colonial Period",
- "period": "Colonial",
- "categories": [
-  "Colonial Period"
- ],
- "tags": [
-  "Catholicism",
-  "faith",
-  "Fr. Francis Hezel",
-  "Fr. San Vitores",
-  "Guam",
-  "Pedro Calungsod"
- ],
- "image": "https://houseoftaga.com/wp-content/uploads/2024/02/b.goode_Illustrate_in_black_and_white_in_WSJ_hedcut_style_of__bc83669b-348b-4326-82db-8fc5d5b46fd9_0-1.png",
- "imageAlt": "Fr San Vitores being attacked by enraged locals who are convinced by Choco that the holy water is poison.",
- "excerpt": "Fr. Francis Hezel, a leading scholar in Micronesian studies, elucidated the profound costs incurred during the conversion of the Chamorros to Catholicism, underscoring the turbulent period known as the Chamorro-Spanish…",
- "words": 299,
- "readMin": 1,
- "blocks": [
-  {
-   "type": "p",
-   "text": "Fr. Francis Hezel, a leading scholar in Micronesian studies, elucidated the profound costs incurred during the conversion of the Chamorros to Catholicism, underscoring the turbulent period known as the Chamorro-Spanish wars."
-  },
-  {
-   "type": "img",
-   "src": "https://houseoftaga.com/wp-content/uploads/2024/02/51308863524_24d026f3b7.jpg",
-   "alt": "",
-   "caption": ""
-  },
-  {
-   "type": "p",
-   "text": "In a public lecture titled, “The Founding of the Church in the Marianas: A Clash of Cultures,” on Saipan several years ago, Fr. Hezel delved into the intricate dynamics that precipitated strife in the region."
-  },
-  {
-   "type": "p",
-   "text": "Sponsored by the Lay Ministry’s Program of the Diocese of Chalan Kanoa and the Northern Marianas Humanities Council, Fr. Hezel's discourse shed light on the cultural misunderstandings that catalyzed violence in the aftermath of Fr. San Vitores’s mission work in Hagåtña, Guam. Just two months into his endeavors, tensions flared over rumors alleging the toxicity of baptismal waters, perpetuated by a Chinese castaway named Choco, whose influence among the island's populace proved potent."
-  },
-  {
-   "type": "p",
-   "text": "Fr. Hezel articulated how these rumors, fueled by misunderstandings and suspicions, escalated into clashes over deeply held cultural practices. The desecration of local shrines and the demolition of sacred artifacts further exacerbated tensions, symbolizing a collision between indigenous traditions and the burgeoning influence of Catholicism."
-  },
-  {
-   "type": "p",
-   "text": "The ensuing violence, including the tragic murder of Fr. San Vitores and Pedro Calungsod, a Filipino layperson later canonized, underscored the fragility of mutual goodwill amid cultural upheaval. Contrary to the notion of a unified resistance, Fr. Hezel revealed a fragmented landscape, with diverse individuals—Spaniards, Mexicans, and Filipinos—embroiled in the conflict."
-  },
-  {
-   "type": "p",
-   "text": "The absence of centralized leadership compounded the complexities of the era, with Guam’s villages governed by disparate chieftains. Despite Fr. San Vitores’s initial aspirations of harmony and acceptance, discord ultimately prevailed, leaving an indelible imprint on the cultural fabric of the Marianas."
-  },
-  {
-   "type": "p",
-   "text": "Fr. Hezel's nuanced analysis offers valuable insights into the intersection of faith, tradition, and colonialism, illuminating a pivotal chapter in Micronesian history."
-  }
- ]
+  "excerpt": "Fr. Francis Hezel, a leading scholar in Micronesian studies, elucidated the profound costs incurred during the conversion of the Chamorros to Catholicism, underscoring the turbulent period known as the Chamorro-Spanish…",
+  "period": "Colonial",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Fr. Francis Hezel, a leading scholar in Micronesian studies, elucidated the profound costs incurred during the conversion of the Chamorros to Catholicism, underscoring the turbulent period known as the Chamorro-Spanish wars."
+    },
+    {
+      "type": "img",
+      "src": "https://houseoftaga.com/wp-content/uploads/2024/02/51308863524_24d026f3b7.jpg",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "type": "p",
+      "text": "In a public lecture titled, “The Founding of the Church in the Marianas: A Clash of Cultures,” on Saipan several years ago, Fr. Hezel delved into the intricate dynamics that precipitated strife in the region."
+    },
+    {
+      "type": "p",
+      "text": "Sponsored by the Lay Ministry’s Program of the Diocese of Chalan Kanoa and the Northern Marianas Humanities Council, Fr. Hezel's discourse shed light on the cultural misunderstandings that catalyzed violence in the aftermath of Fr. San Vitores’s mission work in Hagåtña, Guam. Just two months into his endeavors, tensions flared over rumors alleging the toxicity of baptismal waters, perpetuated by a Chinese castaway named Choco, whose influence among the island's populace proved potent."
+    },
+    {
+      "type": "p",
+      "text": "Fr. Hezel articulated how these rumors, fueled by misunderstandings and suspicions, escalated into clashes over deeply held cultural practices. The desecration of local shrines and the demolition of sacred artifacts further exacerbated tensions, symbolizing a collision between indigenous traditions and the burgeoning influence of Catholicism."
+    },
+    {
+      "type": "p",
+      "text": "The ensuing violence, including the tragic murder of Fr. San Vitores and Pedro Calungsod, a Filipino layperson later canonized, underscored the fragility of mutual goodwill amid cultural upheaval. Contrary to the notion of a unified resistance, Fr. Hezel revealed a fragmented landscape, with diverse individuals—Spaniards, Mexicans, and Filipinos—embroiled in the conflict."
+    },
+    {
+      "type": "p",
+      "text": "The absence of centralized leadership compounded the complexities of the era, with Guam’s villages governed by disparate chieftains. Despite Fr. San Vitores’s initial aspirations of harmony and acceptance, discord ultimately prevailed, leaving an indelible imprint on the cultural fabric of the Marianas."
+    },
+    {
+      "type": "p",
+      "text": "Fr. Hezel's nuanced analysis offers valuable insights into the intersection of faith, tradition, and colonialism, illuminating a pivotal chapter in Micronesian history."
+    }
+  ],
+  "words": 299,
+  "author": "Lexi Zotomayor",
+  "slug": "gift-of-faith-did-not-come-cheaply",
+  "imageAlt": "Fr San Vitores being attacked by enraged locals who are convinced by Choco that the holy water is poison.",
+  "date": "2024-02-09T07:08:27Z",
+  "bodyText": "Fr. Francis Hezel, a long-time observer of Micronesian life, once set out to measure the high price paid when the Chamorros met Catholicism. It was a dark, restless time, remembered now as the Chamorro-Spanish wars.\n\nSpeaking a few years back on Saipan, in a lecture titled “The Founding of the Church in the Marianas: A Clash of Cultures,” Fr. Hezel traced the misunderstandings that eventually flared into war. The talk, hosted by the local diocese and the Northern Marianas Humanities Council, looked back to the arrival of Fr. San Vitores in Hagåtña. Trouble began almost at once—just two months in—fueled by a rumor that holy water was poisonous. The story was spread by a Chinese castaway named Choco, whose word carried weight among the islanders.\n\nFrom there, suspicion grew into open quarrel. Sacred artifacts were broken and local shrines torn down, each act a small blow against indigenous life in the name of a new faith.\n\nThe violence that followed took the lives of Fr. San Vitores and Pedro Calungsod, a young Filipino layperson now counted among the saints. Yet as Fr. Hezel pointed out, this was no simple war of two opposing sides. The island was fragmented, its villages ruled by individual chieftains rather than a single chief, and the combatants were a mixed gathering of Spaniards, Mexicans, Filipinos, and islanders.\n\nFr. San Vitores had hoped for peaceful conversion, but discord proved stronger. In the end, the encounter left a mark on the Marianas that time has not erased—a quiet reminder of how easily faith, tradition, and conquest can tangle.",
+  "title": "Gift of faith did not come cheaply",
+  "tags": [
+    "Catholicism",
+    "faith",
+    "Fr. Francis Hezel",
+    "Fr. San Vitores",
+    "Guam",
+    "Pedro Calungsod"
+  ],
+  "image": "https://houseoftaga.com/wp-content/uploads/2024/02/b.goode_Illustrate_in_black_and_white_in_WSJ_hedcut_style_of__bc83669b-348b-4326-82db-8fc5d5b46fd9_0-1.png",
+  "readMin": 1,
+  "categories": [
+    "Colonial Period"
+  ],
+  "category": "Colonial Period"
 }
